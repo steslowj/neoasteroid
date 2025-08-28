@@ -1,0 +1,31 @@
+---
+import ProseLayout from '../layouts/ProseLayout.astro';
+---
+<style>
+  a {
+    padding-inline: 0.5em;
+  }
+  a:hover {
+    background-color: var(--color-accent);
+    color: var(--color-accent-content);
+    border-radius: var(--radius-box);
+    text-decoration-style: double;
+  }
+</style>
+<ProseLayout
+	title="resources"
+	description="A collection of useful links for webdev"
+  background="bg-base-100 p-4 rounded-box border-2"
+>
+<ul class="resources-links">
+  <li>collection of icon collections: <a href="https://icones.js.org/">https://icones.js.org/</a></li>
+  <li>eggramen css pages with layouts <a href="https://eggramen.neocities.org/code/css_testpages">eggramen.neocities.org/code/css_testpages</a></li>
+  <li>petrapixel has a really cool layout generator and lots of good website tips <a href="https://petrapixel.neocities.org">petrapixel.neocities.org</a></li>
+  <li>lots of pixel art on this tumber, <a href="https://p-i-x-e-l-s.tumblr.com/post/6668016842/tag-list">p-i-x-e-l-s</a></li>
+  <li>neato graphics for use <a href="https://ooops.lol/you/">ooops.lol/you</a></li>
+  <li>wow so many web resources! <a href="https://discourse.32bit.cafe/t/resources-list-for-the-personal-web/49">discourse.32bit.cafe/t/resources-list-for-the-personal-web/49</a></li>
+  <li>website that can pull the color codes from other websites!?!?! <a href="http://colorhound.net/">colorhound.net</a></li>
+  <li>a site to test colors for themes <a href="https://www.realtimecolors.com/?colors=050315-fbfbfe-2f27ce-dedcff-433bff&fonts=Inter-Inter">realtimecolors.com</a></li>
+  <li>list of emoticons from wikipedia ~ <a href="https://en.wikipedia.org/wiki/List_of_emoticons">wikipedia.org/wiki/List_of_emoticons</a></li>
+</ul>
+</ProseLayout>

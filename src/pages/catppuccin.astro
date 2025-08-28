@@ -1,0 +1,176 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+	title="catppuccin and daisy UI :)"
+	description="Lorem ipsum dolor sit amet"
+  background="bg-base-100 p-4 rounded-box border-2"
+>
+  <div class="rounded-box text-center py-2 px-8 mb-4 mx-auto bg-neutral text-neutral-content w-fit flex flex-col">
+    <div>I love these themes & catppuccin has so many ports!!!</div>
+    <a class="link text-neutral-content" href="https://catppuccin.com/ports/">https://catppuccin.com/ports/</a>
+    <a class="link text-neutral-content" href="https://github.com/catppuccin/daisyui">https://github.com/catppuccin/daisyui</a>
+  </div>
+  <div class="rounded-box px-6 py-2 w-full">
+    <div id="app" class="pb-3"></div>
+    <div class="flex flex-col gap-3">
+      <div class="grid grid-cols-2 gap-2 md:grid-cols-4 lg:grid-cols-9">
+        <button class="btn">Default</button>
+        <button class="btn btn-neutral">Neutral</button>
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-accent">Accent</button>
+        <button class="btn btn-info">Info</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-warning">Warning</button>
+        <button class="btn btn-error">Error</button >
+      </div>
+      <div class="grid grid-cols-2 place-items-center gap-2 md:grid-cols-4 lg:grid-cols-9">
+        <input type="text" placeholder="Default" class="input input-bordered w-full" />
+        <input type="text" placeholder="Neutral" class="input input-neutral input-bordered w-full" />
+        <input type="text" placeholder="Primary" class="input input-primary input-bordered w-full" />
+        <input type="text" placeholder="Secondary" class="input input-secondary input-bordered w-full" />
+        <input type="text" placeholder="Accent" class="input input-accent input-bordered w-full" />
+        <input type="text" placeholder="Info" class="input input-info input-bordered w-full" />
+        <input type="text" placeholder="Success" class="input input-success input-bordered w-full" />
+        <input type="text" placeholder="Warning" class="input input-warning input-bordered w-full" />
+        <input type="text" placeholder="Error" class="input input-error input-bordered w-full" />
+      </div>
+      <div
+        class="grid grid-cols-2 place-items-center gap-2 md:grid-cols-4 lg:grid-cols-9 *:flex-col *:lg:flex *:lg:gap-2 *:lg:items-center"
+      >
+        <div>
+          <div>
+            <input type="checkbox" checked="checked" class="toggle" />
+            <input type="checkbox" checked="checked" class="checkbox" />
+            <input type="radio" name="radio" class="radio" checked="" />
+          </div>
+          <span class="badge badge-soft">Default</span>
+        </div>
+        <div>
+          <div>
+            <input type="checkbox" checked="checked" class="toggle toggle-neutral" />
+            <input type="checkbox" checked="checked" class="checkbox checkbox-neutral" />
+            <input type="radio" name="radio" class="radio radio-neutral" />
+          </div>
+          <span class="badge badge-soft badge-neutral">Neutral</span>
+        </div>
+        <div>
+          <div>
+            <input type="checkbox" checked="checked" class="toggle toggle-primary" />
+            <input type="checkbox" checked="checked" class="checkbox checkbox-primary" />
+            <input type="radio" name="radio" class="radio radio-primary" />
+          </div>
+          <span class="badge badge-soft badge-primary">Primary</span>
+        </div>
+        <div>
+          <div>
+            <input type="checkbox" checked="checked" class="toggle toggle-secondary" />
+            <input type="checkbox" checked="checked" class="checkbox checkbox-secondary" />
+            <input type="radio" name="radio" class="radio radio-secondary" />
+          </div>
+          <span class="badge badge-soft badge-secondary">Secondary</span>
+        </div>
+        <div>
+          <div>
+            <input type="checkbox" checked="checked" class="toggle toggle-accent" />
+            <input type="checkbox" checked="checked" class="checkbox checkbox-accent" />
+            <input type="radio" name="radio" class="radio radio-accent" />
+          </div>
+          <span class="badge badge-soft badge-accent">Accent</span>
+        </div>
+        <div>
+          <div>
+            <input type="checkbox" checked="checked" class="toggle toggle-info" />
+            <input type="checkbox" checked="checked" class="checkbox checkbox-info" />
+            <input type="radio" name="radio" class="radio radio-info" />
+          </div>
+          <span class="badge badge-soft badge-info">Info</span>
+        </div>
+        <div>
+          <div>
+            <input type="checkbox" checked="checked" class="toggle toggle-success" />
+            <input type="checkbox" checked="checked" class="checkbox checkbox-success" />
+            <input type="radio" name="radio" class="radio radio-success" />
+          </div>
+          <span class="badge badge-soft badge-success">Success</span>
+        </div>
+        <div>
+          <div>
+            <input type="checkbox" checked="checked" class="toggle toggle-warning" />
+            <input type="checkbox" checked="checked" class="checkbox checkbox-warning" />
+            <input type="radio" name="radio" class="radio radio-warning" />
+          </div>
+          <span class="badge badge-soft badge-warning">Warning</span>
+        </div>
+        <div>
+          <div>
+            <input type="checkbox" checked="checked" class="toggle toggle-error" />
+            <input type="checkbox" checked="checked" class="checkbox checkbox-error" />
+            <input type="radio" name="radio" class="radio radio-error" />
+          </div>
+          <span class="badge badge-soft badge-error">Error</span>
+        </div>
+      </div>
+      <div class="flex flex-col gap-3">
+        <div class="flex flex-col gap-3 md:flex-row">
+          <div class="flex flex-col justify-around md:w-1/2 lg:w-1/4">
+            <progress value="20" max="100" class="progress">Default</progress>
+            <progress value="30" max="100" class="progress progress-neutral">Neutral</progress>
+            <progress value="40" max="100" class="progress progress-primary">Primary</progress>
+            <progress value="50" max="100" class="progress progress-secondary">Secondary</progress>
+            <progress value="60" max="100" class="progress progress-accent">Accent</progress>
+            <progress value="70" max="100" class="progress progress-info">Info</progress>
+            <progress value="80" max="100" class="progress progress-success">Success</progress>
+            <progress value="90" max="100" class="progress progress-warning">Warning</progress>
+            <progress value="100" max="100" class="progress progress-error">Error</progress>
+          </div>
+          <div class="flex flex-col justify-around md:w-1/2 lg:w-1/4">
+            <input type="range" min="0" max="100" value="100" class="range range-xs" />
+            <input type="range" min="0" max="100" value="90" class="range range-xs range-neutral" />
+            <input type="range" min="0" max="100" value="80" class="range range-xs range-primary" />
+            <input type="range" min="0" max="100" value="70" class="range range-xs range-secondary" />
+            <input type="range" min="0" max="100" value="60" class="range range-xs range-accent" />
+            <input type="range" min="0" max="100" value="50" class="range range-xs range-info" />
+            <input type="range" min="0" max="100" value="40" class="range range-xs range-success" />
+            <input type="range" min="0" max="100" value="30" class="range range-xs range-warning" />
+            <input type="range" min="0" max="100" value="20" class="range range-xs range-error" />
+          </div>
+          <div class="md:w-1/2 lg:w-1/4">
+            <div role="tablist" class="tabs tabs-lift">
+              <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 1" />
+              <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 1</div>
+              <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 2" checked="checked" />
+              <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 2</div>
+              <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 3" />
+              <div class="tab-content bg-base-100 border-base-300 p-6">Tab content 3</div>
+            </div>
+            <div class="flex flex-col">
+              <span class="link">I'm a simple link</span> <span class="link link-primary">I'm a simple link</span>
+              <span class="link link-secondary">I'm a simple link</span>
+              <span class="link link-accent">I'm a simple link</span>
+            </div>
+          </div>
+          <div class="stats bg-base-300 border-base-300 border md:w-1/2 lg:w-1/4">
+            <div class="stat">
+              <div class="stat-title">Total Page Views</div>
+              <div class="stat-value">89,400</div>
+              <div class="stat-desc">21% more than last month</div>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center justify-center gap-3 md:w-1/2 lg:w-1/4">
+            <div class="card card-border border-base-300 w-full">
+              <div class="mockup-code">
+                <pre class="text-sm" data-prefix="$"><code>npm i daisyui</code></pre>
+                <pre class="text-sm" data-prefix=">"><code>installing...</code></pre>
+                <pre class="text-sm" data-prefix=">"><code>Done!</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.ts"></script>
+</MainLayout>

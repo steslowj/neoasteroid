@@ -1,0 +1,115 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+import CuteCard from '../components/CuteCard.astro';
+import Counter from '../components-react/Counter';
+
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+		<style>
+			main {
+				width: calc(100% - 2em);
+				max-width: 100%;
+				margin-inline: auto;
+        padding: 1em;
+        /* height: 100%; */
+			}
+      .prose {
+				max-width: calc(100% - 2em);
+				/* height: 100%; */
+			}
+			.title {
+				padding: 1em 0 0 0;
+				text-align: center;
+				line-height: 1;
+			}
+			.title h1 {
+				margin: 0 0 0.5em 0;
+			}
+      li {
+        margin-block: 0;
+        padding-block: 0;
+      }
+      article.main-grid > * {
+        margin-bottom: 1rem;
+      }
+		</style>
+	</head>
+	<body class="max-w-10xl">
+		<Header />
+    <div class="grid md:grid-cols-[16rem_auto]">
+      <Sidebar />
+      <main>
+        <!-- <article class="prose main-grid grid items-start gap-4 grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))]"> -->
+        <article class="prose main-grid columns-xs gap-4">
+
+          <div>
+            <CuteCard title="checkit">
+              <div>This site was built by me!</div>
+              <div>Using...</div>
+              <ul class="p-0 ps-5 mt-0 mb-0">
+                <li>Astro (static site generator)</li>
+                <li>Tailwind (styling library)</li>
+                <li>DaisyUI (components and color themes!)</li>
+                <li>with a little bit of React (javascript framework)</li>
+                <li>and some custom CSS and JS</li>
+              </ul>
+            </CuteCard>
+          </div>
+          
+          <div>
+            <CuteCard title="counter">
+              <Counter client:load/>
+            </CuteCard>
+          </div>
+
+          <div class="text-center">
+            <CuteCard title="rem unit">
+              <div style="font-size: 1rem">1rem</div>
+              <div style="font-size: 16px">16px</div>
+              <div style="font-size: 2rem">2rem</div>
+              <div style="font-size: 32px">32px</div>
+            </CuteCard>
+          </div>
+
+          <div>
+            <CuteCard title="theme colors">
+              <div class="grid gap-2 grid-cols-[repeat(auto-fit,_minmax(80px,_1fr))]">
+                <button class="btn">Default</button>
+                <button class="btn btn-neutral">Neutral</button>
+                <button class="btn btn-primary">Primary</button>
+                <button class="btn btn-secondary">Secondary</button>
+                <button class="btn btn-accent">Accent</button>
+                <button class="btn btn-info">Info</button>
+                <button class="btn btn-success">Success</button>
+                <button class="btn btn-warning">Warning</button>
+                <button class="btn btn-error">Error</button>
+              </div>
+            </CuteCard>
+          </div>
+
+
+
+
+        </article>
+      </main>
+    </div>
+		<Footer />
+	</body>
+  <script>
+    const cardList = document.querySelectorAll(".main-grid .cute-card");
+    cardList.forEach((card)=>{card.style.backgroundColor = "var(--color-success)"})
+    const cardToolbarList = document.querySelectorAll(".main-grid .cute-card .mockup-browser-toolbar")
+    cardToolbarList.forEach((card)=>{card.style.color = "var(--color-success-content)"})
+  </script>
+</html>
+
+
+
+

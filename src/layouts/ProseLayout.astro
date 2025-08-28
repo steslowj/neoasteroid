@@ -1,0 +1,56 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+
+const { title, description, background } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description}/>
+		<style>
+			main {
+				width: calc(100% - 2em);
+				max-width: 100%;
+				margin-inline: auto;
+        padding: 1em;
+        height: 100%;
+			}
+      .prose {
+				max-width: calc(100% - 2em);
+        width: 720px;
+				margin: auto;
+				padding: 1em;
+				/* height: 100%; */
+			}
+			.title {
+				padding: 1em 0 0 0;
+				text-align: center;
+				line-height: 1;
+			}
+			.title h1 {
+				margin: 0 0 0.5em 0;
+			}
+		</style>
+	</head>
+
+	<body class="max-w-10xl">
+		<Header />
+    <div class="grid md:grid-cols-[16rem_auto]">
+      <Sidebar />
+    
+      <main>
+        <article class=`prose ${background}`>
+          <div class="title">
+            <h1>{title}</h1>
+            <!-- <hr class="mb-5 mt-5"/> -->
+          </div>
+          <slot />
+        </article>
+      </main>
+    </div>
+		<Footer />
+	</body>
+</html>

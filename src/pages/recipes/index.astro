@@ -1,0 +1,79 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
+import CuteCard from '../../components/CuteCard.astro';
+
+const posts = (await getCollection('recipes')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+<!-- oklch(0.19742 0.004 123.72 -->
+<style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul li {
+    margin: 0;
+    padding: 0;
+  }
+  ul li * {
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+  ul li img {
+    margin-block: 0.5em;
+    margin-bottom: 1em;
+    border-radius: 12px;
+  }
+  ul li a {
+    display: block;
+    color: var(--color-base-content);
+  }
+  .date {
+    margin: 0.5em 0 0 0;
+  }
+  ul li a:hover {
+  }
+  ul a:hover img {
+  }
+
+</style>
+<MainLayout
+  title="my recipes"
+  description="a collection of recipes i like"
+  background="p-4 rounded-box"
+>
+<!-- make a wide layout (current index) and a narrow layout (based off blog) -->
+  <section class="recipes-section">
+    <ul class="columns-xs">
+      {
+        posts.map((post) => (
+          <li>
+            <a href={`/recipes/${post.id}/`} class="p-3 rounded-box hover:bg-accent">
+              <CuteCard title={post.data.title}>
+
+              {post.data.heroImage && (
+                <Image width={360} height={200} src={post.data.heroImage} alt="" />
+              )}
+              <div class="description">{post.data.description}</div>
+              <p class="date">
+                <FormattedDate date={post.data.pubDate} />
+              </p>
+              </CuteCard>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+    <script>
+      const cardList = document.querySelectorAll(".recipes-section .cute-card");
+      cardList.forEach((card)=>{card.style.backgroundColor = "var(--color-info)"})
+      const cardToolbarList = document.querySelectorAll(".recipes-section .cute-card .mockup-browser-toolbar")
+      cardToolbarList.forEach((card)=>{card.style.color = "var(--color-info-content)"})
+  </script>
+</MainLayout>
