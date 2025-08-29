@@ -13,67 +13,49 @@
           <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
         </svg>
       </div>
-      <ul tabindex="0" class="theme-switcher dropdown-content menu bg-base-300 rounded-box z-1 w-32 p-2 shadow-2xl">
-        <li>
-          <input
-            type="radio"
-            name="theme-dropdown"
-            class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-            aria-label="Default"
-            value="default" />
-        </li>
-        <li>
-          <input
-            type="radio"
-            name="theme-dropdown"
-            class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-            aria-label="Retro"
-            value="retro" />
-        </li>
-        <li>
-          <input
-            type="radio"
-            name="theme-dropdown"
-            class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-            aria-label="Garden"
-            value="garden" />
-        </li>
-        <li>
-          <input
-            type="radio"
-            name="theme-dropdown"
-            class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-            aria-label="Forest"
-            value="forest" />
-        </li>
-        <li>
-          <input
-            type="radio"
-            name="theme-dropdown"
-            class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-            aria-label="Abyss"
-            value="abyss" />
-        </li>
-      </ul>
+      <form id="theme-form">
+        <ul tabindex="0" class="theme-switcher dropdown-content menu bg-base-300 rounded-box z-1 w-32 p-2 shadow-2xl">
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Default"
+              value="default" />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              checked
+              aria-label="Retro"
+              value="retro" />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Garden"
+              value="garden" />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Forest"
+              value="forest" />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Abyss"
+              value="abyss" />
+          </li>
+        </ul>
+      </form>
     </div>
-    <script is:inline>
-  ;(function loadTheme() {
-    const pageDefaultTheme = document.documentElement.getAttribute('data-theme')
-    const pageThemeHash = document.documentElement.getAttribute('data-theme-hash')
-    if (!pageDefaultTheme || !pageThemeHash) {
-      throw new Error('Theme attributes are required.')
-    }
-    const storedTheme = localStorage.getItem('data-theme')
-    const storedThemeHash = localStorage.getItem('data-theme-hash')
-    const themeHashMatches = storedThemeHash === pageThemeHash
-    if (!storedTheme || !storedThemeHash || !themeHashMatches) {
-      // Should be the first time loading the website
-      localStorage.setItem('data-theme', pageDefaultTheme)
-      localStorage.setItem('data-theme-hash', pageThemeHash)
-    }
-    if (themeHashMatches && storedTheme && storedTheme !== pageDefaultTheme) {
-      // The stored theme is different from the default theme, apply it
-      document.documentElement.setAttribute('data-theme', storedTheme)
-    }
-  })()
-</script>

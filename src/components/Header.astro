@@ -2,13 +2,21 @@
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 import ThemeSwitcher from './ThemeSwitcher.astro'
+import ThemeToggle from './ThemeToggle.jsx'
+import DaisySelect from './DaisySelect.astro'
 ---
 <div class="navbar bg-base-200 shadow-sm md:px-8">
   <div class="navbar-start">
     <h2 class="btn btn-ghost text-xl hover:bg-success hover:text-success-content"><a href="/">smelting marshmallows</a></h2>
   </div>
   <div class="navbar-end">
-    <ThemeSwitcher/>
+    <DaisySelect darkTheme='forest' lightTheme='lemonade'>
+      <!-- <input type='checkbox' value='retro' class='toggle theme-controller' /> -->
+      <ThemeSwitcher/>
+
+
+
+    </DaisySelect>
   </div>
 </div>
   <div class="navbar-center flex justify-center md:hidden">
