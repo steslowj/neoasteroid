@@ -2,7 +2,7 @@
 const today = new Date();
 ---
 
-<footer class="footer text-sm footer-horizontal footer-center flex justify-center bg-base-200 text-base-content rounded p-4">
+<footer class="footer text-sm footer-horizontal footer-center flex flex-wrap justify-center bg-base-200 text-base-content rounded p-3 md:p-4">
   <div class="flex">
     <div>made with</div>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-[1.0em]">
@@ -11,6 +11,9 @@ const today = new Date();
   </div>
   <div>{today.getFullYear()}</div>
 	<div>ʕ •ᴥ•ʔ</div>
+  <div>
+    <a class="link hover:text-primary href="http://https://marshmallowsmelter.tumblr.com/" target="_blank" rel="noopener noreferrer">marshmallowsmelter.tumblr.com</a>
+  </div>
 </footer>
 <style>
   svg{
