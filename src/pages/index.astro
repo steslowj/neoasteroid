@@ -4,7 +4,9 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
 import CuteCard from '../components/CuteCard.astro';
-import Counter from '../components-react/Counter';
+import Counter from '../components-react/Counter.jsx';
+import FroggieClicker from '../components-react/FroggieClicker.jsx';
+import RandomColor from '../components-react/RandomColor.jsx';
 
 const { title, description } = Astro.props;
 ---
@@ -69,12 +71,9 @@ const { title, description } = Astro.props;
             </CuteCard>
           </div>
 
-          <div class="text-center">
-            <CuteCard title="rem unit">
-              <div style="font-size: 1rem">1rem</div>
-              <div style="font-size: 16px">16px</div>
-              <div style="font-size: 2rem">2rem</div>
-              <div style="font-size: 32px">32px</div>
+          <div>
+            <CuteCard title="random color">
+              <RandomColor client:load />
             </CuteCard>
           </div>
 
@@ -94,8 +93,20 @@ const { title, description } = Astro.props;
             </CuteCard>
           </div>
 
+          <div>
+            <CuteCard title="froggie">
+              <FroggieClicker client:load/>
+            </CuteCard>
+          </div>
 
-
+          <div class="text-center">
+            <CuteCard title="rem unit">
+              <div style="font-size: 1rem">1rem</div>
+              <div style="font-size: 16px">16px</div>
+              <div style="font-size: 2rem">2rem</div>
+              <div style="font-size: 32px">32px</div>
+            </CuteCard>
+          </div>
 
         </article>
       </main>

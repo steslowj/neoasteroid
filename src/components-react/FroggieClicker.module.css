@@ -1,0 +1,121 @@
+/* 
+inspired by Coding in Public "HTML, CSS, and JavaScript Custom Widget" https://www.youtube.com/watch?v=WVJLrbiMKhM 
+/*
+
+/*
+:root {
+  --hue: 220;
+  --accent: hsl(var(--hue) 80% 70%);
+  --bkg: hsl(var(--hue) 50% 96%);
+  --txt: hsl(var(--hue) 70% 14%);
+}
+*/
+.froggieClicker {
+  /* --hue: 220; */
+  --accent: hsl(var(--hue) 80% 70%);
+  --bkg: hsl(var(--hue) 50% 96%);
+  --txt: hsl(var(--hue) 70% 14%);
+  /* The changing colors on the container don't work well with dark mode on full page */
+  /* background-color: var(--bkg);
+  color: var(--txt); */
+  margin: 0;
+  padding: 0;
+  display: grid;
+  align-content: stretch;
+  place-items: center;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 40' width='80' height='40'%3E%3Cpath fill='%239C92AC' fill-opacity='0.2' d='M0 40a19.96 19.96 0 0 1 5.9-14.11 20.17 20.17 0 0 1 19.44-5.2A20 20 0 0 1 20.2 40H0zM65.32.75A20.02 20.02 0 0 1 40.8 25.26 20.02 20.02 0 0 1 65.32.76zM.07 0h20.1l-.08.07A20.02 20.02 0 0 1 .75 5.25 20.08 20.08 0 0 1 .07 0zm1.94 40h2.53l4.26-4.24v-9.78A17.96 17.96 0 0 0 2 40zm5.38 0h9.8a17.98 17.98 0 0 0 6.67-16.42L7.4 40zm3.43-15.42v9.17l11.62-11.59c-3.97-.5-8.08.3-11.62 2.42zm32.86-.78A18 18 0 0 0 63.85 3.63L43.68 23.8zm7.2-19.17v9.15L62.43 2.22c-3.96-.5-8.05.3-11.57 2.4zm-3.49 2.72c-4.1 4.1-5.81 9.69-5.13 15.03l6.61-6.6V6.02c-.51.41-1 .85-1.48 1.33zM17.18 0H7.42L3.64 3.78A18 18 0 0 0 17.18 0zM2.08 0c-.01.8.04 1.58.14 2.37L4.59 0H2.07z'%3E%3C/path%3E%3C/svg%3E");
+
+}
+.froggieClicker > .container{
+  padding: 0.5rem;
+  text-align: center;
+}
+.content {
+  border: var(--color-base-200) 2px solid;
+  background: var(--color-base-100);
+  padding: 1rem;
+  display: grid;
+  align-content: stretch;
+  max-width: 20rem;
+  margin: 0 auto;
+  border-radius: 1rem;
+}
+.froggie {
+  --froggie: hsl(var(--hue) 60% 50%);
+  color: var(--froggie);
+  fill: var(--txt);
+  margin: 0 auto;
+  /* border: var(--clr-text) 2px solid;
+  background: var(--clr-card-bg); */
+  /* padding: 0.6rem; */
+  border-radius: 100vmax;
+}
+.textcontainer {
+  padding: 1em 0 1.5em 0;
+  margin: 0;
+  display: grid;
+}
+.textcontainer h3{
+  line-height: 1;
+  margin: 0;
+}
+.btncontainer {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(10px, 1fr));
+  gap: 0.5rem;
+  justify-content: center;
+  justify-items: center;
+}
+.froggieButton {
+  width: 50px !important;
+  height: 55px !important;
+  rotate: 45deg;
+  border-radius: 100vmax;
+  border: none;
+  background-color: hsl(var(--hue) 60% 50%);
+  cursor: pointer;
+}
+/* .froggieButton:focus {
+  outline: none;
+}
+.froggieButton:is(:hover, :focus-visible) {
+  box-shadow: 0 0 0 5px var(--bkg),
+              0 0 0 12px hsl(var(--hue) 60% 50%);
+} */
+[value="10"]{--hue: 10;}
+[value="20"]{--hue: 20;}
+[value="30"]{--hue: 30;}
+[value="40"]{--hue: 40;}
+[value="50"]{--hue: 50;}
+[value="60"]{--hue: 60;}
+[value="70"]{--hue: 70;}
+[value="80"]{--hue: 80;}
+[value="90"]{--hue: 90;}
+[value="100"]{--hue: 100;}
+[value="110"]{--hue: 110;}
+[value="120"]{--hue: 120;}
+[value="130"]{--hue: 130;}
+[value="140"]{--hue: 140;}
+[value="150"]{--hue: 150;}
+[value="160"]{--hue: 160;}
+[value="170"]{--hue: 170;}
+[value="180"]{--hue: 180;}
+[value="190"]{--hue: 190;}
+[value="200"]{--hue: 200;}
+[value="210"]{--hue: 210;}
+[value="220"]{--hue: 220;}
+[value="230"]{--hue: 230;}
+[value="240"]{--hue: 240;}
+[value="250"]{--hue: 250;}
+[value="260"]{--hue: 260;}
+[value="270"]{--hue: 270;}
+[value="280"]{--hue: 280;}
+[value="290"]{--hue: 290;}
+[value="300"]{--hue: 300;}
+[value="310"]{--hue: 310;}
+[value="320"]{--hue: 320;}
+[value="330"]{--hue: 330;}
+[value="340"]{--hue: 340;}
+[value="350"]{--hue: 350;}
+[value="360"]{--hue: 360;}
