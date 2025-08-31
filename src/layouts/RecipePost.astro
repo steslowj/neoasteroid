@@ -22,6 +22,7 @@ const { title, description, pubDate, heroImage } = Astro.props;
 				margin: 0;
         padding: 1em;
         height: 100%;
+        container-type: inline-size;
 			}
 			.hero-image {
 				width: 100%;
@@ -33,11 +34,15 @@ const { title, description, pubDate, heroImage } = Astro.props;
 				box-shadow: var(--box-shadow);
 			}
 			.prose {
-				width: 720px;
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
 			}
+      @container (width > 700px) {
+        .prose {
+          width: 720px;
+        }
+      }
 			.title {
 				margin-bottom: 1em;
 				padding: 1em 0;
@@ -58,18 +63,18 @@ const { title, description, pubDate, heroImage } = Astro.props;
     <div class="grid md:grid-cols-[16rem_auto]">
       <Sidebar />
 
-      <main>
+      <main >
         <article>
           <div class="hero-image">
             {heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
           </div>
-          <div class="prose">
-            <div class="title">
+          <div class="prose bg-base-100 p-4 rounded-box border-2">
+            <div class="title text-base">
               <div class="date">
                 <FormattedDate date={pubDate} />
               </div>
               <h1>{title}</h1>
-              <hr />
+              <div class="divider divider-secondary mx-20"></div>
             </div>
             <slot />
           </div>

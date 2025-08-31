@@ -39,7 +39,7 @@ const { title, description } = Astro.props;
         padding-block: 0;
       }
       article.main-grid > * {
-        margin-bottom: 1rem;
+        margin-bottom: 1em;
       }
 		</style>
 	</head>
@@ -115,7 +115,7 @@ const { title, description } = Astro.props;
 	</body>
   <script>
     const cardList = document.querySelectorAll(".main-grid .cute-card");
-    cardList.forEach((card)=>{card.style.backgroundColor = "var(--color-success)"})
+    cardList.forEach((card)=>{card.style.backgroundColor = "color-mix(in oklab, var(--color-success) 50%, transparent)"})
     const cardToolbarList = document.querySelectorAll(".main-grid .cute-card .mockup-browser-toolbar")
     cardToolbarList.forEach((card)=>{card.style.color = "var(--color-success-content)"})
   </script>

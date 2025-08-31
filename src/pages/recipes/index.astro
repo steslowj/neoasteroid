@@ -19,15 +19,16 @@ const posts = (await getCollection('recipes')).sort(
   ul li {
     margin: 0;
     padding: 0;
+    margin-bottom: 1rem;
   }
   ul li * {
     text-decoration: none;
     transition: 0.2s ease;
   }
   ul li img {
-    margin-block: 0.5em;
+    margin-inline: auto;
+    margin-top: 0;
     margin-bottom: 1em;
-    border-radius: 12px;
   }
   ul li a {
     display: block;
@@ -36,10 +37,7 @@ const posts = (await getCollection('recipes')).sort(
   .date {
     margin: 0.5em 0 0 0;
   }
-  ul li a:hover {
-  }
-  ul a:hover img {
-  }
+
 
 </style>
 <MainLayout
@@ -47,13 +45,12 @@ const posts = (await getCollection('recipes')).sort(
   description="a collection of recipes i like"
   background="p-4 rounded-box"
 >
-<!-- make a wide layout (current index) and a narrow layout (based off blog) -->
   <section class="recipes-section">
-    <ul class="columns-xs">
+    <ul class="columns-xs gap-4">
       {
         posts.map((post) => (
           <li>
-            <a href={`/recipes/${post.id}/`} class="p-3 rounded-box hover:bg-accent">
+            <a href={`/recipes/${post.id}/`} class="rounded-box hover:outline-8 hover:outline-accent">
               <CuteCard title={post.data.title}>
 
               {post.data.heroImage && (
@@ -72,7 +69,7 @@ const posts = (await getCollection('recipes')).sort(
   </section>
     <script>
       const cardList = document.querySelectorAll(".recipes-section .cute-card");
-      cardList.forEach((card)=>{card.style.backgroundColor = "var(--color-info)"})
+      cardList.forEach((card)=>{card.style.backgroundColor = "color-mix(in oklab, var(--color-info) 50%, transparent)"})
       const cardToolbarList = document.querySelectorAll(".recipes-section .cute-card .mockup-browser-toolbar")
       cardToolbarList.forEach((card)=>{card.style.color = "var(--color-info-content)"})
   </script>

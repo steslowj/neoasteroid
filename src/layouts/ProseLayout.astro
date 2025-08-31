@@ -17,14 +17,19 @@ const { title, description, background } = Astro.props;
 				margin-inline: auto;
         padding: 1em;
         height: 100%;
+        container-type: inline-size;
 			}
       .prose {
 				max-width: calc(100% - 2em);
-        width: 720px;
 				margin: auto;
 				padding: 1em;
 				/* height: 100%; */
 			}
+      @container (width > 700px) {
+        .prose {
+          width: 720px;
+        }
+      }
 			.title {
 				padding: 1em 0 0 0;
 				text-align: center;
