@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: lemonade --default, forest, retro, abyss --prefersdark, garden;
+  /* themes: lemonade --default, forest, retro, abyss --prefersdark, garden; */
+  themes: all
 }
 
 /* @plugin "daisyui" {

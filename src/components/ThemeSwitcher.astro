@@ -1,5 +1,42 @@
 ---
+import { themeList } from "./themeList"
 
+const myThemeList = [
+  'light',
+  'dark',
+  'cupcake',
+  'bumblebee',
+  'emerald',
+  'corporate',
+  'synthwave',
+  'retro',
+  'valentine',
+  'halloween',
+  'garden',
+  'forest',
+  'aqua',
+  'lofi',
+  'pastel',
+  'fantasy',
+  'wireframe',
+  'black',
+  'luxury',
+  'dracula',
+  'cmyk',
+  'autumn',
+  'business',
+  'acid',
+  'lemonade',
+  'night',
+  'coffee',
+  'winter',
+  'dim',
+  'nord',
+  'sunset',
+  'caramellatte',
+  'abyss',
+  'silk',
+]
 ---
     <div class="dropdown dropdown-bottom dropdown-end">
       <div tabindex="0" role="button" class="btn m-1">
@@ -12,50 +49,76 @@
           viewBox="0 0 2048 2048">
           <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
         </svg>
+
       </div>
       <form id="theme-form">
-        <ul tabindex="0" class="theme-switcher dropdown-content menu bg-base-300 rounded-box z-1 w-32 p-2 shadow-2xl">
-          <li>
+        <ul tabindex="0" class="overflow-auto flex flex-col flex-nowrap max-h-96 theme-switcher dropdown-content menu bg-base-300 rounded-box z-1 w-32 p-2 shadow-2xl">
+          <!-- might need to label the 1st as default -->
+          <!-- <li>
             <input
               type="radio"
               name="theme-dropdown"
               class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
               aria-label="Default"
               value="default" />
-          </li>
-          <li>
-            <input
-              type="radio"
-              name="theme-dropdown"
-              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-              checked
-              aria-label="Retro"
-              value="retro" />
-          </li>
-          <li>
-            <input
-              type="radio"
-              name="theme-dropdown"
-              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-              aria-label="Garden"
-              value="garden" />
-          </li>
-          <li>
-            <input
-              type="radio"
-              name="theme-dropdown"
-              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-              aria-label="Forest"
-              value="forest" />
-          </li>
-          <li>
-            <input
-              type="radio"
-              name="theme-dropdown"
-              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-              aria-label="Abyss"
-              value="abyss" />
-          </li>
+          </li>   -->
+        {themeList.map((theme)=>{
+            return (
+              <li>
+                <input
+                  type="radio"
+                  name="theme-dropdown"
+                  class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                  aria-label={theme}
+                  value={theme} />
+              </li>
+            )
+          })}
         </ul>
       </form>
     </div>
+  <!-- inspired by and modified from the astro integration "astro-disy-theme-toggle" -->
+  <script data-astro-rerun>
+  function setTheme(document) {
+    const htmlElement = document.documentElement
+    const themeForm = document.getElementById('theme-form'); // the form
+    const themeFormElements = themeForm.elements['theme-dropdown'];
+  
+    const theme = (() => {
+      // nullish coalescing operator (??)
+      // returns the right-hand side operand when its left-hand side operand is null or undefined
+      const localStorageTheme = localStorage?.getItem('theme') ?? ''  
+
+      for (let i = 0; i < themeFormElements.length; i++) {
+        if (themeFormElements[i].value === localStorageTheme) {
+          themeFormElements[i].checked = true;
+        } else {
+          themeFormElements[i].checked = false;
+        }
+      }
+      
+    })()
+  }
+  
+  setTheme(document)
+  
+  document.addEventListener('astro:before-swap', (event) => {
+      setTheme(event.newDocument)
+  })
+
+  const htmlElement = document.documentElement
+  const themeForm = document.getElementById('theme-form'); // the form
+  const themeFormElements = themeForm.elements['theme-dropdown']; // the RadioNodeList
+
+  themeForm.addEventListener('change', function () {
+    // console.log("Value changed; new value is " + themeFormElements.value);
+    localStorage.setItem('theme', themeFormElements.value)
+    // learning the behavior of RadioNodeList when you select a new radio button
+    // for (let i = 0; i < themeFormElements.length; i++) {
+    //   console.log('iteration #', i, 
+    //     ' value is: ', themeFormElements[i].value,
+    //     ' checked is: ', themeFormElements[i].checked
+    //   )
+  });
+
+</script>
