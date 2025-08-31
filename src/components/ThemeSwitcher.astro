@@ -4,6 +4,7 @@ import { themeList } from "./themeList"
 const myThemeList = [
   'light',
   'dark',
+  'latte', 'frappe', 'macchiato', 'mocha',
   'cupcake',
   'bumblebee',
   'emerald',
@@ -40,8 +41,8 @@ const myThemeList = [
 ---
     <div class="dropdown dropdown-bottom dropdown-end">
       <div tabindex="0" role="button" class="btn btn-accent m-1">
-        <div class="md:hidden">Theme</div>
-        <div class="hidden md:block">Site Theme</div>
+        <div class="md:hidden w-full">Theme</div>
+        <div class="w-full hidden md:block">Site Theme</div>
         <svg
           width="12px"
           height="12px"
@@ -63,7 +64,7 @@ const myThemeList = [
               aria-label="Default"
               value="default" />
           </li>   -->
-        {themeList.map((theme)=>{
+        {myThemeList.map((theme)=>{
             return (
               <li>
                 <input
