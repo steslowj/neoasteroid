@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const Counter = () => {
   const [count, setCount] = useState(0)
+
   return (
     <div className="flex gap-4 justify-center items-center">
       <p>ʕ ·(エ)· ʔ</p>
