@@ -17,21 +17,13 @@ const { title, description, pubDate, heroImage } = Astro.props;
 		<BaseHead title={title} description={description} />
 		<style>
 			main {
-				width: calc(100% - 2em);
+				width: 100%;
 				max-width: 100%;
-				margin: 0;
+				margin-inline: auto;
+        margin-block: 0;
         padding: 1em;
         height: 100%;
         container-type: inline-size;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
 			}
 			.prose {
 				max-width: calc(100% - 2em);
@@ -41,6 +33,12 @@ const { title, description, pubDate, heroImage } = Astro.props;
       @container (width > 700px) {
         .prose {
           width: 720px;
+        }
+      }
+      @media (max-width: 720px) {
+        main {
+          width: 100%;
+          padding: 0.5em 0;
         }
       }
 			.title {
@@ -63,7 +61,7 @@ const { title, description, pubDate, heroImage } = Astro.props;
     <div class="grid md:grid-cols-[16rem_auto]">
       <Sidebar />
 
-      <main >
+      <main>
         <article>
           <div class="prose bg-base-100 p-4 rounded-box border-2">
             <div class="title text-base">

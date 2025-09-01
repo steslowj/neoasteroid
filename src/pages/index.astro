@@ -22,8 +22,15 @@ const { title, description } = Astro.props;
         padding: 1em;
         /* height: 100%; */
 			}
+      @media (max-width: 720px) {
+        main {
+          width: 100%;
+          padding: 0.5em 0;
+        }
+      }
       .prose {
 				max-width: calc(100% - 2em);
+        margin-inline: auto;
 				/* height: 100%; */
 			}
 			.title {
