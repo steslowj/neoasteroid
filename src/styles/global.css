@@ -64,7 +64,20 @@ body {
       transparent 2px
     );
   background-size: 32px 32px;
-  background-color: var(--color-base-100);
+  
+}
+
+html {
+  background-image:
+    linear-gradient(
+      180deg,
+      var(--color-base-100),
+      color-mix(in oklab, var(--color-secondary) 2%, transparent),
+      color-mix(in oklab, var(--color-secondary) 5%, transparent),
+      color-mix(in oklab, var(--color-secondary) 10%, transparent)
+    );
+    background-size: cover;
+    background-color: var(--color-base-100);
 }
 
 @media (min-width: 48rem) {
