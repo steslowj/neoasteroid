@@ -1,0 +1,91 @@
+---
+---
+<script src="https://unpkg.com/topojson-client@3"></script>
+<script>
+
+var feature = topojson.feature(topology, "foo");
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/versor@0.2.0/dist/versor.min.js"></script>
+<script type="module">
+
+import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+
+
+
+
+
+
+// me attempting to get all the things for the globe ready
+// I want to repeat this https://observablehq.com/@d3/sketchy-earth 
+
+function curveContext(curve) {
+  return {
+    moveTo(x, y) {
+      curve.lineStart();
+      curve.point(x, y);
+    },
+    lineTo(x, y) {
+      curve.point(x, y);
+    },
+    closePath() {
+      curve.lineEnd();
+    }
+  };
+}
+
+
+function geoCurvePath(curve, projection, context) {
+  return object => {
+    const pathContext = context === undefined ? d3.path() : context;
+    d3.geoPath(projection, curveContext(curve(pathContext)))(object);
+    return context === undefined ? pathContext + "" : undefined;
+  };
+}
+
+
+
+
+
+
+
+// Declare the chart dimensions and margins.
+const width = 640;
+const height = 400;
+const marginTop = 20;
+const marginRight = 20;
+const marginBottom = 30;
+const marginLeft = 40;
+
+// Declare the x (horizontal position) scale.
+const x = d3.scaleUtc()
+    .domain([new Date("2023-01-01"), new Date("2024-01-01")])
+    .range([marginLeft, width - marginRight]);
+
+// Declare the y (vertical position) scale.
+const y = d3.scaleLinear()
+    .domain([0, 100])
+    .range([height - marginBottom, marginTop]);
+
+// Create the SVG container.
+const svg = d3.create("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+// Add the x-axis.
+svg.append("g")
+    .attr("transform", `translate(0,${height - marginBottom})`)
+    .call(d3.axisBottom(x));
+
+// Add the y-axis.
+svg.append("g")
+    .attr("transform", `translate(${marginLeft},0)`)
+    .call(d3.axisLeft(y));
+
+// Append the SVG element.
+container.append(svg.node());
+
+</script>
+<div>testing d3 globe</div>
+<div id="container"></div>
+<a href="https://observablehq.com/collection/@d3/d3-geo" target="_blank" rel="noopener noreferrer">D3 neat mapping examples</a>

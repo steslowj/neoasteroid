@@ -7,6 +7,7 @@ import CuteCard from '../components/CuteCard.astro';
 import Counter from '../components-react/Counter.jsx';
 import FroggieClicker from '../components-react/FroggieClicker.jsx';
 import RandomColor from '../components-react/RandomColor.jsx';
+import GlobeD3 from '../components/GlobeD3.astro';
 
 const { title, description } = Astro.props;
 ---
@@ -56,7 +57,7 @@ const { title, description } = Astro.props;
       <Sidebar />
       <main>
         <!-- <article class="prose main-grid grid items-start gap-4 grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))]"> -->
-        <article class="prose main-grid columns-xs gap-4">
+        <article class="prose prose-sm main-grid columns-xs gap-4">
 
           <div>
             <CuteCard title="checkit">
@@ -67,7 +68,7 @@ const { title, description } = Astro.props;
                 <li>Tailwind (styling library)</li>
                 <li>DaisyUI (components and color themes!)</li>
                 <li>with a little bit of React (javascript framework)</li>
-                <li>and some custom CSS and JS</li>
+                <li>and custom CSS and JS ~</li>
               </ul>
             </CuteCard>
           </div>
@@ -124,6 +125,13 @@ const { title, description } = Astro.props;
               <div style="font-size: 32px">32px</div>
             </CuteCard>
           </div>
+
+          <div>
+            <CuteCard title="globe">
+              <GlobeD3 />
+            </CuteCard>
+          </div>
+
 
         </article>
       </main>

@@ -38,7 +38,7 @@ const { title, description, background } = Astro.props;
 				text-align: center;
 				line-height: 1;
 			}
-			.title h1 {
+			.title h2 {
 				margin: 0 0 0.5em 0;
 			}
 		</style>
@@ -50,9 +50,9 @@ const { title, description, background } = Astro.props;
       <Sidebar />
     
       <main>
-        <article class=`prose ${background}`>
+        <article class=`prose prose-sm ${background}`>
           <div class="title">
-            <h1>{title}</h1>
+            <h2>{title}</h2>
             <!-- <hr class="mb-5 mt-5"/> -->
           </div>
           <slot />

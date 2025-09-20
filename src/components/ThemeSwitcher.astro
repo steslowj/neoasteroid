@@ -39,8 +39,77 @@ const myThemeList = [
   'silk',
 ]
 ---
+    <style>
+      .glowy-btn {
+        padding: 0.6em 2em;
+        border: none;
+        outline: none;
+        color: var(--color-accent-content);
+        background: var(--color-accent);
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      .glowy-btn:before {
+        content: "";
+        background: linear-gradient(
+          45deg,
+          #ff0000,
+          #ff7300,
+          #fffb00,
+          #48ff00,
+          #00ffd5,
+          #002bff,
+          #7a00ff,
+          #ff00c8,
+          #ff0000
+        );
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 200%;
+        z-index: -1;
+        /* filter: blur(5px); */
+        /* -webkit-filter: blur(5px); */
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing-button 20s linear 2;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+      }
+
+      @keyframes glowing-button {
+        0% {
+          background-position: 0 0;
+        }
+        50% {
+          background-position: 400% 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+
+      .glowy-btn:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: var(--color-accent);
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+      }
+      
+    </style>
     <div class="dropdown dropdown-bottom dropdown-end">
-      <div tabindex="0" role="button" class="btn btn-accent m-1">
+      <div tabindex="0" role="button" class="btn glowy-btn m-1">
         <div class="md:hidden w-full">Theme</div>
         <div class="w-full hidden md:block">Site Theme</div>
         <svg
