@@ -8,6 +8,7 @@ import Counter from '../components-react/Counter.jsx';
 import FroggieClicker from '../components-react/FroggieClicker.jsx';
 import RandomColor from '../components-react/RandomColor.jsx';
 import GlobeD3 from '../components/GlobeD3.astro';
+import DS from '../components/DS.astro';
 
 const { title, description } = Astro.props;
 ---
@@ -52,6 +53,15 @@ const { title, description } = Astro.props;
         margin-block: 0;
         padding-block: 0;
       }
+      .tiny-cute-card{
+        background-color: var(--color-base-100);
+        /* opacity: 0.8; */
+        background: 
+          repeating-linear-gradient( 0deg, color-mix(in oklab, var(--color-warning) 15%, var(--color-base-100)), color-mix(in oklab, var(--color-warning) 15%, var(--color-base-100)) 5px, var(--color-base-100) 5px, var(--color-base-100) 8px );
+        filter: 
+          drop-shadow(2px 2px color-mix(in oklab, var(--color-base-content) 50%, var(--color-base-300))) 
+          drop-shadow(1px 0 color-mix(in oklab, var(--color-base-content) 50%, var(--color-base-300)));
+      }
 		</style>
 	</head>
 	<body class="max-w-10xl">
@@ -86,11 +96,22 @@ const { title, description } = Astro.props;
             </CuteCard>
           </div>          
           
-          <div>
-            <CuteCard title="counter">
-              <Counter client:load/>
-            </CuteCard>
+          <div class="flex flex-row items-start justify-around gap-6">
+            <div class="w-full">
+              <CuteCard title="counter">
+                <Counter client:load/>
+              </CuteCard>
+            </div>
+            <div class="tiny-cute-card text-center border-2 border-base-content rounded-box py-2 px-1 break-inside-avoid w-fit">
+              <!-- <CuteCard title="rem unit"> -->
+                <div style="font-size: 1rem; line-height: 1.2;">1rem</div>
+                <div style="font-size: 16px; line-height: 1.2;">16px</div>
+                <div style="font-size: 2rem; line-height: 1;">2rem</div>
+                <div style="font-size: 32px; line-height: 1;">32px</div>
+              <!-- </CuteCard> -->
+            </div>
           </div>
+
 
           <div>
             <CuteCard title="random color">
@@ -114,20 +135,17 @@ const { title, description } = Astro.props;
             </CuteCard>
           </div>
 
+          <div class="break-inside-avoid">
+            <DS />
+          </div>
+
           <div>
             <CuteCard title="froggie">
               <FroggieClicker client:load/>
             </CuteCard>
           </div>
 
-          <div class="text-center">
-            <CuteCard title="rem unit">
-              <div style="font-size: 1rem">1rem</div>
-              <div style="font-size: 16px">16px</div>
-              <div style="font-size: 2rem">2rem</div>
-              <div style="font-size: 32px">32px</div>
-            </CuteCard>
-          </div>
+
 
           <div>
             <CuteCard title="globe">
