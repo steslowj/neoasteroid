@@ -1,0 +1,29 @@
+---
+import ProseLayout from '../layouts/ProseLayout.astro';
+import { Image } from 'astro:assets';
+import kittygif from '../assets/gifs/bobadrink-CIPDiUtI.gif';
+---
+
+<style>
+  article {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+  }
+  @media (max-width: 720px) {
+    article {
+      width: 100%;
+      padding: 0 0 0 0.5em;
+    }
+  }
+</style>
+<ProseLayout
+  title="404 not found"
+  description="the 404 not found page"
+  background="bg-base-100 p-4 rounded-box border-2"
+>
+  <article class="404-content-container">
+    <p>This page doesn't exist! Sorry!</p>
+    <Image src={kittygif} alt="a cute kitty drinking boba"/>
+  </article>
+</ProseLayout>

@@ -11,19 +11,22 @@ import GlobeD3 from '../components/GlobeD3.astro';
 import DS from '../components/DS.astro';
 
 const { title, description } = Astro.props;
+import { SITE_TITLE } from '../consts';
+import { SITE_DESCRIPTION } from '../consts';
 ---
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin-inline: auto;
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      main {
+        width: calc(100% - 2em);
+        max-width: 100%;
+        margin-inline: auto;
         padding: 1em;
         /* height: 100%; */
-			}
+      }
       article.main-grid > * {
         margin-bottom: 1.5em;
       }
@@ -37,41 +40,59 @@ const { title, description } = Astro.props;
         }
       }
       .prose {
-				max-width: calc(100% - 2em);
+        max-width: calc(100% - 2em);
         margin-inline: auto;
-				/* height: 100%; */
-			}
-			.title {
-				padding: 1em 0 0 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
+        /* height: 100%; */
+      }
+      .title {
+        padding: 1em 0 0 0;
+        text-align: center;
+        line-height: 1;
+      }
+      .title h1 {
+        margin: 0 0 0.5em 0;
+      }
       li {
         margin-block: 0;
         padding-block: 0;
       }
-      .tiny-cute-card{
+      .tiny-cute-card {
         background-color: var(--color-base-100);
         /* opacity: 0.8; */
-        background: 
-          repeating-linear-gradient( 0deg, color-mix(in oklab, var(--color-warning) 15%, var(--color-base-100)), color-mix(in oklab, var(--color-warning) 15%, var(--color-base-100)) 5px, var(--color-base-100) 5px, var(--color-base-100) 8px );
-        filter: 
-          drop-shadow(2px 2px color-mix(in oklab, var(--color-base-content) 50%, var(--color-base-300))) 
-          drop-shadow(1px 0 color-mix(in oklab, var(--color-base-content) 50%, var(--color-base-300)));
+        background: repeating-linear-gradient(
+          0deg,
+          color-mix(in oklab, var(--color-warning) 15%, var(--color-base-100)),
+          color-mix(in oklab, var(--color-warning) 15%, var(--color-base-100))
+            5px,
+          var(--color-base-100) 5px,
+          var(--color-base-100) 8px
+        );
+        filter: drop-shadow(
+            2px 2px
+              color-mix(
+                in oklab,
+                var(--color-base-content) 50%,
+                var(--color-base-300)
+              )
+          )
+          drop-shadow(
+            1px 0
+              color-mix(
+                in oklab,
+                var(--color-base-content) 50%,
+                var(--color-base-300)
+              )
+          );
       }
-		</style>
-	</head>
-	<body class="max-w-10xl">
-		<Header />
+    </style>
+  </head>
+  <body class="max-w-10xl">
+    <Header />
     <div class="grid md:grid-cols-[16rem_auto]">
       <Sidebar />
       <main>
         <!-- <article class="prose prose-sm main-grid grid items-start gap-4 md:gap-8 grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))]"> -->
         <article class="prose prose-sm main-grid columns-2xs gap-4 md:gap-6">
-
           <div>
             <CuteCard title="checkit">
               <div>This site was built by me!</div>
@@ -94,24 +115,25 @@ const { title, description } = Astro.props;
                 <div class="h-12 bg-linear-90 from-info to-accent"></div>
               </div>
             </CuteCard>
-          </div>          
-          
+          </div>
+
           <div class="flex flex-row items-start justify-around gap-6">
             <div class="w-full">
               <CuteCard title="counter">
-                <Counter client:load/>
+                <Counter client:load />
               </CuteCard>
             </div>
-            <div class="tiny-cute-card text-center border-2 border-base-content rounded-box py-2 px-1 break-inside-avoid w-fit">
+            <div
+              class="tiny-cute-card text-center border-2 border-base-content rounded-box py-2 px-1 break-inside-avoid w-fit"
+            >
               <!-- <CuteCard title="rem unit"> -->
-                <div style="font-size: 1rem; line-height: 1.2;">1rem</div>
-                <div style="font-size: 16px; line-height: 1.2;">16px</div>
-                <div style="font-size: 2rem; line-height: 1;">2rem</div>
-                <div style="font-size: 32px; line-height: 1;">32px</div>
+              <div style="font-size: 1rem; line-height: 1.2">1rem</div>
+              <div style="font-size: 16px; line-height: 1.2">16px</div>
+              <div style="font-size: 2rem; line-height: 1">2rem</div>
+              <div style="font-size: 32px; line-height: 1">32px</div>
               <!-- </CuteCard> -->
             </div>
           </div>
-
 
           <div>
             <CuteCard title="random color">
@@ -121,7 +143,9 @@ const { title, description } = Astro.props;
 
           <div>
             <CuteCard title="theme colors">
-              <div class="grid gap-2 grid-cols-[repeat(auto-fit,_minmax(80px,_1fr))]">
+              <div
+                class="grid gap-2 grid-cols-[repeat(auto-fit,_minmax(80px,_1fr))]"
+              >
                 <button class="btn">Default</button>
                 <button class="btn btn-neutral">Neutral</button>
                 <button class="btn btn-primary">Primary</button>
@@ -141,32 +165,31 @@ const { title, description } = Astro.props;
 
           <div>
             <CuteCard title="froggie">
-              <FroggieClicker client:load/>
+              <FroggieClicker client:load />
             </CuteCard>
           </div>
-
-
 
           <div>
             <CuteCard title="globe">
               <GlobeD3 />
             </CuteCard>
           </div>
-
-
         </article>
       </main>
     </div>
-		<Footer />
-	</body>
+    <Footer />
+  </body>
   <script>
-    const cardList = document.querySelectorAll(".main-grid .cute-card");
-    cardList.forEach((card)=>{card.style.backgroundColor = "color-mix(in oklab, var(--color-success) 50%, transparent)"})
-    const cardToolbarList = document.querySelectorAll(".main-grid .cute-card .mockup-browser-toolbar")
-    cardToolbarList.forEach((card)=>{card.style.color = "var(--color-success-content)"})
+    const cardList = document.querySelectorAll('.main-grid .cute-card');
+    cardList.forEach((card) => {
+      card.style.backgroundColor =
+        'color-mix(in oklab, var(--color-success) 50%, transparent)';
+    });
+    const cardToolbarList = document.querySelectorAll(
+      '.main-grid .cute-card .mockup-browser-toolbar'
+    );
+    cardToolbarList.forEach((card) => {
+      card.style.color = 'var(--color-success-content)';
+    });
   </script>
 </html>
-
-
-
-

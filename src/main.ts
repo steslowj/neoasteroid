@@ -1,17 +1,19 @@
-document.querySelector('#app')!.innerHTML = /* html */`
+document.querySelector('#app')!.innerHTML = /* html */ `
 <div class="join join-horizontal w-full *:w-1/4">
-${
-  ['latte', 'frappe', 'macchiato', 'mocha'].map((theme, idx) => /* html */`
+${['latte', 'frappe', 'macchiato', 'mocha']
+  .map(
+    (theme, idx) => /* html */ `
     <input
       type="radio"
       name="theme-buttons"
       class="btn theme-controller join-item"
       aria-label="${theme}"
       value="${theme}" />
-  `).join('\n')
-}
+  `
+  )
+  .join('\n')}
 </div>
-`
+`;
 
 // document.querySelector('#app')!.innerHTML = /* html */`
 // <div class="join join-horizontal w-full *:w-1/4">

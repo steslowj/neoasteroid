@@ -5,7 +5,7 @@ const Counter = () => {
 
   return (
     <div className="flex gap-4 justify-center items-center">
-      <p class="text-nowrap">ʕ ·(エ)· ʔ</p>
+      <p className="text-nowrap">ʕ ·(エ)· ʔ</p>
       <p>clicky</p>
       <button
         className="btn btn-accent"

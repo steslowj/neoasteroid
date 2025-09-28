@@ -1,4 +1,19 @@
 ---
+import { Image } from 'astro:assets';
+import pikachuSurf from '../assets/gifs/1133-pikachusurf.gif';
+import bearBox from '../assets/gifs/1442-bearbox.gif';
+import frogDance from '../assets/gifs/2706-frog-dance.gif';
+import kirbySpin from '../assets/gifs/2923_kirbySpin.gif';
+import frogHeart from '../assets/gifs/3625-frog-heart.gif';
+import geckoGroove from '../assets/gifs/4148_gecko_groove.gif';
+import BMODancing from '../assets/gifs/4803_BMO_dancing.gif';
+import frogWobble from '../assets/gifs/4901-frog-wobble.gif';
+import runningPikachu from '../assets/gifs/5541-running-pikachu.gif';
+import bearHeart from '../assets/8090-bearheart.png';
+import frogKisses from '../assets/gifs/8440-frog-kisses.gif';
+import uwuBear from '../assets/gifs/8487-uwu-bear.gif';
+import cannedLuck from '../assets/gifs/CannedLuck.gif';
+
 ---
 
     <!-- (c) Layout created by daniel (https://layouts.spacehey.com/layout?id=85996) -->
@@ -16,21 +31,22 @@
         can use #hex, rgb(0,0,0), colorname, etc */
             /* --overall-color: rgb(179, 244, 233); */
             /* --overall-color: var(--color-primary); */
-            --overall-color: color-mix(in oklab, var(--color-primary) 80%, var(--color-base-100));
+            --overall-color: color-mix(in oklab, var(--color-primary) 70%, var(--color-base-100));
             /* --overall-color: var(--color-secondary); */
 
             /* welcome image / background ?
         i love using a png for this */
-            --welcome-image: url("https://media.giphy.com/media/lXiRzPb8C5JTJcfPq/giphy.gif?cid=ecf05e47o15qrxexg6w8q8z30c4filenjedctd17k2wvhcjv&ep=v1_gifs_related&rid=giphy.gif&ct=g");
+            /* --welcome-image: url("https://media.giphy.com/media/lXiRzPb8C5JTJcfPq/giphy.gif?cid=ecf05e47o15qrxexg6w8q8z30c4filenjedctd17k2wvhcjv&ep=v1_gifs_related&rid=giphy.gif&ct=g"); */
 
             /* custom tab titles ! */
-            --tab-1-title: "about me";
-            --tab-2-title: "art";
-            --tab-3-title: "you";
-            --tab-4-title: "linkme";
+            --tab-1-title: "wishing";
+            --tab-2-title: "you a";
+            --tab-3-title: "lovely";
+            --tab-4-title: "day";
 
             /* text that goes after every tab ! 
         use '\A' without quotes to form a line break */
+            /* these aren't working for some reason, although the titles work? added manually at the end */
             --tab-1-content: "i don't know... \A who am i?";
             --tab-2-content: "check my art \A i love to draw things";
             --tab-3-content: "things for your website";
@@ -38,10 +54,10 @@
 
             /* thumbnails ! make sure you put your image
         link INSIDE the quotation marks.... please */
-            --tab-1-thumbnail: url("https://media.giphy.com/media/juSCTzqDAV1Xq/giphy.gif?cid=ecf05e47o15qrxexg6w8q8z30c4filenjedctd17k2wvhcjv&ep=v1_gifs_related&rid=giphy.gif&ct=g");
-            --tab-2-thumbnail: url("https://media.giphy.com/media/lJNoBCvQYp7nq/giphy.gif?cid=ecf05e47uqdkzy86b54t9u77jr0bfop7uppljcbu4r5ravcy&ep=v1_gifs_related&rid=giphy.gif&ct=g");
-            --tab-3-thumbnail: url("https://media.giphy.com/media/y5OffROvBod0s/giphy.gif?cid=ecf05e47uqdkzy86b54t9u77jr0bfop7uppljcbu4r5ravcy&ep=v1_gifs_related&rid=giphy.gif&ct=g");
-            --tab-4-thumbnail: url("https://media.giphy.com/media/H5mx6uIAAiaru/giphy.gif?cid=ecf05e47uqdkzy86b54t9u77jr0bfop7uppljcbu4r5ravcy&ep=v1_gifs_related&rid=giphy.gif&ct=g");
+            /* --tab-1-thumbnail: url("https://media.giphy.com/media/juSCTzqDAV1Xq/giphy.gif?cid=ecf05e47o15qrxexg6w8q8z30c4filenjedctd17k2wvhcjv&ep=v1_gifs_related&rid=giphy.gif&ct=g"); */
+            /* --tab-2-thumbnail: url("https://media.giphy.com/media/lJNoBCvQYp7nq/giphy.gif?cid=ecf05e47uqdkzy86b54t9u77jr0bfop7uppljcbu4r5ravcy&ep=v1_gifs_related&rid=giphy.gif&ct=g"); */
+            /* --tab-3-thumbnail: url("https://media.giphy.com/media/y5OffROvBod0s/giphy.gif?cid=ecf05e47uqdkzy86b54t9u77jr0bfop7uppljcbu4r5ravcy&ep=v1_gifs_related&rid=giphy.gif&ct=g"); */
+            /* --tab-4-thumbnail: url("https://media.giphy.com/media/H5mx6uIAAiaru/giphy.gif?cid=ecf05e47uqdkzy86b54t9u77jr0bfop7uppljcbu4r5ravcy&ep=v1_gifs_related&rid=giphy.gif&ct=g"); */
         }
 
         /* wall of code itself down below... if you know what you're doing and wanna change advanced stuff, make it readable at unminify.com */
@@ -203,7 +219,6 @@
 
         .dantendo .upper-screen .screen {
             overflow-x: hidden;
-            overflow-y: auto
         }
 
         .dantendo .lower-screen .screen {
@@ -254,14 +269,15 @@
 
         .welcome-image {
             transition: .4s;
-            content: var(--welcome-image);
-            height: calc(100% - 15px);
-            width: 100%;
+            /* content: var(--welcome-image); */
+            /* height: calc(100% - 15px); */
+            /* width: 100%; */
+            width: 70%;
             object-fit: cover;
             object-position: bottom;
             opacity: 1;
             position: absolute;
-            right: 0
+            right: 10%
         }
 
         .dantendo-tab {
@@ -278,7 +294,9 @@
             overflow-y: auto;
             word-break: break-word;
             position: absolute;
-            box-shadow: 0 0 4px -1px rgba(0, 0, 0, .5)
+            box-shadow: 0 0 4px -1px rgba(0, 0, 0, .5);
+            overflow-x: hidden;
+            overflow-y: hidden;
         }
 
         .power-button,
@@ -286,7 +304,8 @@
         .start-btn {
             position: absolute;
             font-family: arial;
-            font-size: 14px;
+            /* font-size: 14px; */
+            font-size: 12px;
             color: #000;
             user-select: none;
             text-shadow: 0 0 0 #000;
@@ -308,6 +327,18 @@
             text-transform: uppercase
         }
 
+        .dantendo .tab-img-div {
+          margin: 0;
+          padding: 0;
+          height: 80%;
+        }
+        .dantendo .tab-img-div img{
+          margin-inline: auto;
+          margin-block: 0;
+          padding: 0;
+          height: 90%;
+        }
+
         #tab-1 .tab-title::after {
             content: var(--tab-1-title)
         }
@@ -324,7 +355,7 @@
             content: var(--tab-4-title)
         }
 
-        #tab-1 .tab-content::after {
+        /* #tab-1 .tab-content::after {
             content: var(--tab-1-content)
         }
 
@@ -338,9 +369,9 @@
 
         #tab-4 .tab-content::after {
             content: var(--tab-4-content)
-        }
+        } */
 
-        #tab-1-button img {
+        /* #tab-1-button img {
             content: var(--tab-1-thumbnail)
         }
 
@@ -354,7 +385,7 @@
 
         #tab-4-button img {
             content: var(--tab-4-thumbnail)
-        }
+        } */
 
         .dantendo .screen .thumbnail {
             background: silver;
@@ -371,10 +402,14 @@
         }
 
         .dantendo .screen .thumbnail img {
-            min-width: 100%;
+            /* min-width: 100%; */
+            width: 80%;
             max-height: 100%;
             min-height: 100%;
-            object-fit: cover
+            object-fit: cover;
+            top: 0;
+            margin-top: 0;
+            margin-inline: auto;
         }
 
         :is(#tab-1, #tab-2, #tab-3, #tab-4) {
@@ -630,23 +665,35 @@
     <div class="dantendo">
         <div class="screen-division upper-screen">
             <div class="screen">
-                <div class="dantendo-bar"><span>Name of the Website</span> 01/01 11:11 - </div><img src=""
-                    class="welcome-image" />
+                <div class="dantendo-bar"><span>marshmallowsmeter</span> 01/01 11:11 - </div><img src={pikachuSurf.src}
+                    class="welcome-image"/>
                 <div class="dantendo-tab" id="tab-1">
                     <h6 class="tab-title"></h6>
                     <p class="tab-content"></p>
+                    <div class="tab-img-div">
+                      <img src={kirbySpin.src} alt="">
+                    </div>
                 </div>
                 <div class="dantendo-tab" id="tab-2">
                     <h6 class="tab-title"></h6>
                     <p class="tab-content"></p>
+                    <div class="tab-img-div">
+                      <img src={bearHeart.src} alt="">
+                    </div>
                 </div>
                 <div class="dantendo-tab" id="tab-3">
                     <h6 class="tab-title"></h6>
                     <p class="tab-content"></p>
+                    <div class="tab-img-div">
+                      <img src={cannedLuck.src} alt="">
+                    </div>
                 </div>
                 <div class="dantendo-tab" id="tab-4">
                     <h6 class="tab-title"></h6>
                     <p class="tab-content"></p>
+                    <div class="tab-img-div">
+                      <img src={frogHeart.src} alt="">
+                    </div>                      
                 </div>
             </div>
         </div>
@@ -659,10 +706,10 @@
                 <div class="arrows-left-right"><a href="#/"></a> <a href="#/"></a></div>
                 <div class="arrow-down"><a href="#/"></a></div>
             </div>
-            <div class="screen"><a href="#/" class="thumbnail" id="tab-1-button"><img src="" alt="tab 1 thumbnail" />
-                </a><a href="#/" class="thumbnail" id="tab-2-button"><img src="" alt="tab 2 thumbnail" /> </a><a
-                    href="#/" class="thumbnail" id="tab-3-button"><img src="" alt="tab 3 thumbnail" /> </a><a href="#/"
-                    class="thumbnail" id="tab-4-button"><img src="" alt="tab 4 thumbnail" /></a></div>
+            <div class="screen"><a href="#/" class="thumbnail" id="tab-1-button"><img src={bearBox.src} alt="tab 1 thumbnail" />
+                </a><a href="#/" class="thumbnail" id="tab-2-button"><img src={frogKisses.src} alt="tab 2 thumbnail" /> </a><a
+                    href="#/" class="thumbnail" id="tab-3-button"><img src={BMODancing.src} alt="tab 3 thumbnail" /> </a><a href="#/"
+                    class="thumbnail" id="tab-4-button"><img src={geckoGroove.src} alt="tab 4 thumbnail" /></a></div>
             <div class="buttons">
                 <div class="button-x"><a href="#/"></a></div>
                 <div class="buttons-y-a"><a href="#/"></a> <a href="#/"></a></div>
