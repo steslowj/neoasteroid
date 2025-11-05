@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+import deadlylazer from '../assets/stamps/deadlylazer.gif';
+import ilovesleeping from '../assets/stamps/ilovesleeping.gif';
+import mew from '../assets/stamps/mew.png';
+import pride from '../assets/stamps/pride.png';
+import rice from '../assets/stamps/rice.jpg';
+import rilakkuma from '../assets/stamps/rilakkuma.png';
+---
+<style>
+  img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+</style>
+<div class="grid grid-cols-3 gap-2 justify-around items-center">
+  <img src={deadlylazer.src} alt="the sun is a deadly lazer">
+  <img src={ilovesleeping.src} alt="a crescent moon in a starry sky with the text i love sleeping">
+  <img src={mew.src} alt="a cute pink mew from pokemon">
+  <img src={rice.src} alt="a bowl of rice with the text i heart rice">
+  <img src={pride.src} alt="a rainbow pride flag">
+  <img src={rilakkuma.src} alt="sanrio rilakkuma characters">
+</div>

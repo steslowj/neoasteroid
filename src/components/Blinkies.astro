@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+import daydream from '../assets/blinkies/daydream-believer.gif';
+import moretime from '../assets/blinkies/i-need-more-time.gif';
+import neocities from '../assets/blinkies/neocities-user.webp';
+import whale from '../assets/blinkies/whale.gif';
+import frog from '../assets/blinkies/frog.gif';
+import plantpot from '../assets/blinkies/plantpot.gif';
+import rainbowstar from '../assets/blinkies/rainbowstar.gif';
+import disabledpride from '../assets/blinkies/disabledpride.gif';
+
+---
+<style>
+  img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+</style>
+<div class="grid columns-1 gap-1 justify-around items-center">
+  <img src={daydream.src} alt="a pink butterfly with the text daydream believer">
+  <img src={moretime.src} alt="a stopwatch with adjacent text i need more time">
+  <img src={neocities.src} alt="the text neocities-user">
+  <img src={whale.src} alt="a cute blue with adjacent text having a whale of a time">
+  <img src={frog.src} alt="a cute frog whale with adjacent text frog friend">
+  <img src={plantpot.src} alt="a cute pottied plant with adjacent text growing">
+  <img src={rainbowstar.src} alt="a rainbow star with a smiley face and adjacent text silly!!">
+  <img src={disabledpride.src} alt="a black background with pride flag banners and text disabled pride">
+</div>
+    

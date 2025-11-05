@@ -9,6 +9,8 @@ import FroggieClicker from '../components-react/FroggieClicker.jsx';
 import RandomColor from '../components-react/RandomColor.jsx';
 import GlobeD3 from '../components/GlobeD3.astro';
 import DS from '../components/DS.astro';
+import Stamps from '../components/Stamps.astro'
+import Blinkies from '../components/Blinkies.astro'
 
 const { title, description } = Astro.props;
 import { SITE_TITLE } from '../consts';
@@ -174,6 +176,22 @@ import { SITE_DESCRIPTION } from '../consts';
               <GlobeD3 />
             </CuteCard>
           </div>
+
+          <div>
+            <CuteCard title="stamps">
+              <Stamps />
+            </CuteCard>
+          </div>
+
+          <div>
+            <CuteCard title="blinkies">
+              <Blinkies />
+            </CuteCard>
+            <div class="bg-base-100 w-fit px-2 mb-0 mt-2 rounded-sm"> 
+              <a class="link hover:text-primary" href="https://blinkies.cafe/" target="_blank" rel="noopener noreferrer">blinkies.cafe</a>
+            </div>
+          </div>
+
         </article>
       </main>
     </div>
