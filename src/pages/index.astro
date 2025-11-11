@@ -9,6 +9,7 @@ import FroggieClicker from '../components-react/FroggieClicker.jsx';
 import RandomColor from '../components-react/RandomColor.jsx';
 import GlobeD3 from '../components/GlobeD3.astro';
 import DS from '../components/DS.astro';
+import Bubbles from '../components/Bubbles.astro';
 import Stamps from '../components/Stamps.astro'
 import Blinkies from '../components/Blinkies.astro'
 import KurzgesagtMe from '../components/KurzgesagtMe.astro'
@@ -175,6 +176,14 @@ import { SITE_DESCRIPTION } from '../consts';
           <div>
             <CuteCard title="globe">
               <GlobeD3 />
+            </CuteCard>
+          </div>
+
+          <div>
+            <CuteCard title="bubbles">
+              <div class="h-80 rounded-box overflow-hidden p-0 m-0">
+                <Bubbles />
+              </div>
             </CuteCard>
           </div>
 
