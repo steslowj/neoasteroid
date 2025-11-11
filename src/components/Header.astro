@@ -3,19 +3,23 @@ import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 import ThemeSwitcher from './ThemeSwitcher.astro'
 ---
+<!-- HeaderLink component expects active links to NOT end in / -->
 <div class="navbar bg-base-200 shadow-sm md:px-8 bg-linear-120 from-base-200 to-primary/50">
   <div class="navbar-start">
-    <h2 class="btn btn-ghost text-base sm:text-xl hover:bg-success/50 hover:text-success-content"><a href="/">smelting marshmallows</a></h2>
+    <h2 class="btn btn-ghost text-base sm:text-xl hover:bg-success/50 hover:text-success-content">
+      <a href="/">smelting marshmallows</a>
+    </h2>
   </div>
   <div class="navbar-end">
     <ThemeSwitcher/>
   </div>
-<!-- </div>
-  <div class="navbar-center flex justify-center md:hidden">
-    <ul class="menu menu-horizontal mt-4 bg-base-100 border-2 rounded-box">
-      <li><HeaderLink class="hover:bg-primary/70 hover:text-primary-content" href="/">home</HeaderLink></li>
-      <li><HeaderLink class="hover:bg-secondary/70 hover:text-secondary-content" href="/resources/">resources</HeaderLink></li>
-			<li><HeaderLink class="hover:bg-accent/70 hover:text-accent-content" href="/recipes/">recipes</HeaderLink></li>
-      <li><HeaderLink class="hover:bg-info/70 hover:text-info-content" href="/catppuccin/">catppuccin</HeaderLink></li>
-    </ul>
-  </div> -->
+</div>
+<div class="navbar-center flex justify-center md:hidden">
+  <ul class="menu menu-horizontal bg-base-100 border-2 rounded-box m-2 p-1 justify-around">
+    <li><HeaderLink class="hover:bg-primary/70 hover:text-primary-content" href="/">home</HeaderLink></li>
+    <li><HeaderLink class="hover:bg-secondary/70 hover:text-secondary-content" href="/about">about</HeaderLink></li>
+    <li><HeaderLink class="hover:bg-accent/70 hover:text-accent-content" href="/resources">resources</HeaderLink></li>
+    <li><HeaderLink class="hover:bg-warning/70 hover:text-warning-content" href="/recipes">recipes</HeaderLink></li>
+    <li><HeaderLink class="hover:bg-info/70 hover:text-info-content" href="/catppuccin">catppuccin</HeaderLink></li>
+  </ul>
+</div>

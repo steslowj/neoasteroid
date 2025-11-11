@@ -1,0 +1,189 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+import CuteCard from '../components/CuteCard.astro';
+import avatar from '../assets/avatar-familyvalues.png';
+import picrew from '../assets/picrewme.png';
+import american from '../assets/identity-btns/american.png';
+import cartographer from '../assets/identity-btns/cartographer.png';
+import chronicillness from '../assets/identity-btns/chronic-illness.png';
+import crafts from '../assets/identity-btns/crafts.png';
+import dnd from '../assets/identity-btns/dnd.png';
+import dogowner from '../assets/identity-btns/dog-owner.png';
+import folkpunk from '../assets/identity-btns/folk-punk.png';
+import hope from '../assets/identity-btns/hope.png';
+import lupus from '../assets/identity-btns/lupus.png';
+import science from '../assets/identity-btns/science.png';
+import sheher from '../assets/identity-btns/she-her.png';
+import wizard from '../assets/identity-btns/wizard.png';
+
+import { Image } from 'astro:assets';
+const { title, description } = Astro.props;
+import { SITE_TITLE } from '../consts';
+import { SITE_DESCRIPTION } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title="about" description="about me" />
+    <style>
+      main {
+        width: calc(100% - 2em);
+        max-width: 100%;
+        margin-inline: auto;
+        padding: 1em;
+        /* height: 100%; */
+      }
+      article.main-grid > * {
+        margin-bottom: 1.5em;
+      }
+      @media (max-width: 720px) {
+        main {
+          width: 100%;
+          padding: 0.5em 0;
+        }
+        article.main-grid > * {
+          margin-bottom: 1em;
+        }
+      }
+      .prose {
+        max-width: calc(100% - 2em);
+        margin-inline: auto;
+        /* height: 100%; */
+      }
+      .title {
+        padding: 1em 0 0 0;
+        text-align: center;
+        line-height: 1;
+      }
+      .title h1 {
+        margin: 0 0 0.5em 0;
+      }
+      li {
+        margin-block: 0;
+        padding-block: 0;
+      }
+      .picrew {
+        margin: 0;
+        width: 260px;
+      }
+      .identity-btn {
+        margin: 0.5em;
+        width: 120px;
+      }
+    </style>
+  </head>
+  <body class="max-w-10xl">
+    <Header />
+    <div class="grid md:grid-cols-[16rem_auto]">
+      <Sidebar />
+      <main>
+        <!-- <article class="prose prose-sm main-grid grid items-start gap-4 md:gap-8 grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))]"> -->
+        <article class="prose prose-sm main-grid columns-sm gap-4 md:gap-6">
+          <div>
+            <CuteCard title="profile for realsies">
+              <div class="prose prose-sm mb-1">
+                hiii I'm marsh and I like playing with CSS! Here's some info about me:
+              </div>
+              <div class="flex flex-row w-fit items-center mx-auto">
+                <div class="border-2 border-neutral rounded-box overflow-clip w-fit h-fit p-2 m-0 bg-white">
+                  <Image
+                    class="picrew"
+                    src={picrew}
+                    alt="A picrew with a girl in yellow glasses, a green sweater, pink polka dot tights, and yellow gym shoes, with a pink tea cup"
+                  />
+                </div>
+                <div class="w-fit">
+                  <Image
+                    class="identity-btn"
+                    src={sheher}
+                    alt="small identity button that says she-her"
+                  />
+                  <Image
+                    class="identity-btn"
+                    src={dogowner}
+                    alt="small identity button that says dog owner"
+                  />
+                  <Image
+                    class="identity-btn"
+                    src={cartographer}
+                    alt="small identity button that says cartographer"
+                  />
+                  <Image
+                    class="identity-btn"
+                    src={dnd}
+                    alt="small identity button that says dnd (dungeons and dragons)"
+                  />
+                  <Image
+                    class="identity-btn"
+                    src={wizard}
+                    alt="small identity button that says wizard"
+                  />
+                  <Image
+                    class="identity-btn"
+                    src={science}
+                    alt="small identity button that says science"
+                  />
+                  <Image
+                    class="identity-btn"
+                    src={crafts}
+                    alt="small identity button that says crafts"
+                  />
+                  <Image
+                    class="identity-btn"
+                    src={hope}
+                    alt="small identity button that says hope with the Homestuck hope symbol"
+                  />
+                  <Image
+                    class="identity-btn"
+                    src={chronicillness}
+                    alt="small identity button that says chronic illness"
+                  />
+                  <Image
+                    class="identity-btn"
+                    src={lupus}
+                    alt="small identity button that says lupus"
+                  />
+                </div>
+              </div>
+            </CuteCard>
+          </div>
+
+          <div>
+            <CuteCard title="me and coding">
+              <div class="prose prose-sm">
+                <p>You may ask what does cartography have to do with coding? Well, the answer is that nowadays there usually is an online equivalent to jobs we normally think of as being offline. In the case of cartography, digital mapping exists in the domain of "Geographic Information Systems" or GIS. I actually got into web development because I was first in GIS, then learning HTML, CSS, and JS became really important. From there I learned that building websites can be a lot of fun too!</p>
+                <p>When I started GIS school I didn't really consider myself computer-literate, but I did have a huge interest in math and also making pretty designs and I think both of those things work well for web development. And I'm very very thankful for all the indie web enthusiasts who post open source resources for people to learn <3 </p>
+            </CuteCard>
+          </div>
+
+          <div>
+            <CuteCard title="me and indie web">
+              <div class="prose prose-sm">
+                <p>I actually didn't grow up exploring the web of the 2000s in the same way other Millenials have (I'm in my 30s), so I don't have the same nostalgia that many of my friends have. But I do have a lot of uh disdain for the hyper-optimized, exploitative, marketing-based web of today. I love that learning how to code websites has lead me to a community of folks that like websites just for fun.</p>
+                <p>Which brings me to neocities! What a cool group of people making cool things. It's so fun to browse and see what people come up with, to see the creativity, to see how people help each other :) </p>
+              </div>
+            </CuteCard>
+          </div>
+        </article>
+      </main>
+    </div>
+    <Footer />
+  </body>
+  <script>
+    const cardList = document.querySelectorAll('.main-grid .cute-card');
+    cardList.forEach((card) => {
+      card.style.backgroundColor =
+        'color-mix(in oklab, var(--color-success) 50%, transparent)';
+    });
+    const cardToolbarList = document.querySelectorAll(
+      '.main-grid .cute-card .mockup-browser-toolbar'
+    );
+    cardToolbarList.forEach((card) => {
+      card.style.color = 'var(--color-success-content)';
+    });
+  </script>
+</html>

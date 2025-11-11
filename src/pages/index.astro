@@ -11,6 +11,7 @@ import GlobeD3 from '../components/GlobeD3.astro';
 import DS from '../components/DS.astro';
 import Stamps from '../components/Stamps.astro'
 import Blinkies from '../components/Blinkies.astro'
+import KurzgesagtMe from '../components/KurzgesagtMe.astro'
 
 const { title, description } = Astro.props;
 import { SITE_TITLE } from '../consts';
@@ -102,7 +103,7 @@ import { SITE_DESCRIPTION } from '../consts';
                 <li>Astro (static site generator)</li>
                 <li>Tailwind (styling library)</li>
                 <li>DaisyUI (components and color themes!)</li>
-                <li>with a little bit of React (javascript framework)</li>
+                <li>React (javascript framework)</li>
                 <li>and custom CSS and JS ~</li>
               </ul>
               <div>BTW this site is responsive! Mess with the window size!</div>
@@ -146,7 +147,7 @@ import { SITE_DESCRIPTION } from '../consts';
           <div>
             <CuteCard title="theme colors">
               <div
-                class="grid gap-2 grid-cols-[repeat(auto-fit,_minmax(80px,_1fr))]"
+                class="grid gap-2 grid-cols-3"
               >
                 <button class="btn">Default</button>
                 <button class="btn btn-neutral">Neutral</button>
@@ -191,6 +192,8 @@ import { SITE_DESCRIPTION } from '../consts';
               <a class="link hover:text-primary" href="https://blinkies.cafe/" target="_blank" rel="noopener noreferrer">blinkies.cafe</a>
             </div>
           </div>
+
+          <KurzgesagtMe />
 
         </article>
       </main>

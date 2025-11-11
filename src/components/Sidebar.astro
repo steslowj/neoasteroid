@@ -4,15 +4,17 @@ import { Image } from "astro:assets"
 import marshmallow from "../assets/pexels-marshmallows.jpg";
 import HeaderLink from './HeaderLink.astro';
 ---
-
-<div class="sidebar prose prose-sm max-w-full flex flex-wrap gap-2 md:gap-4 justify-center md:justify-start pt-4 pb-2 md:px-4 md:flex-col">
-  <div class="max-w-80">
+<!-- HeaderLink component expects active links to NOT end in / -->
+<div class="sidebar prose prose-sm max-w-full flex flex-wrap gap-2 md:gap-4 justify-center md:justify-start pt-2 md:pt-4 pb-2 md:px-4 md:flex-col">
+  <div class="w-fit md:w-full max-w-80">
     <CuteCard title="welcome">
-      <div>hello!</div>
-      <div>this is my webby site!</div>
-      <div>about me:</div>
+      <div class="flex gap-x-2 flex-row md:flex-col">
+        <div>hello!</div>
+        <div>this is my webby site!</div>
+        <div>about me:</div>
+      </div>
       <ul class="mb-1 mt-0 ps-5 text-pretty">
-        <li>civil engineer turned mapper</li>
+        <li>civil eng turned mapper</li>
         <li>webdev is fun</li>
         <li>coffee ∙ tea ∙ hot cocoa</li>
       </ul>
@@ -21,39 +23,45 @@ import HeaderLink from './HeaderLink.astro';
       </div>
     </CuteCard>
   </div>
-  <div class="w-fit">
+  <div class="w-fit hidden md:block">
     <CuteCard title="nav">
       <ul
         tabindex="0"
-        class="menu dropdown-content z-1 mt-0 mb-0 w-40 p-0">
+        class="menu dropdown-content z-1 mt-0 mb-0 w-fit md:w-40 p-0">
         <li class="ps-0 ">
           <HeaderLink href="/" class="hover:bg-primary/70 hover:text-primary-content">
-          <svg class="inline" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><!-- Icon from MingCute Icon by MingCute Design - https://github.com/Richard9394/MingCute/blob/main/LICENSE --><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M10.772 2.688a2 2 0 0 1 2.317-.099l.139.1l8.384 6.52c.721.561.37 1.692-.499 1.785l-.116.006H20v8a2 2 0 0 1-1.85 1.995L18 21H6a2 2 0 0 1-1.994-1.85L4 19v-8h-.997C2.09 11 1.671 9.892 2.3 9.285l.088-.076zM12 4.267L5.625 9.225c.229.185.375.468.375.785V19h3v-5a3 3 0 1 1 6 0v5h3v-8.99c0-.317.146-.6.375-.785zM12 13a1 1 0 0 0-1 1v5h2v-5a1 1 0 0 0-1-1"/></g></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><!-- Icon from MingCute Icon by MingCute Design - https://github.com/Richard9394/MingCute/blob/main/LICENSE --><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M10.772 2.688a2 2 0 0 1 2.317-.099l.139.1l8.384 6.52c.721.561.37 1.692-.499 1.785l-.116.006H20v8a2 2 0 0 1-1.85 1.995L18 21H6a2 2 0 0 1-1.994-1.85L4 19v-8h-.997C2.09 11 1.671 9.892 2.3 9.285l.088-.076zM12 4.267L5.625 9.225c.229.185.375.468.375.785V19h3v-5a3 3 0 1 1 6 0v5h3v-8.99c0-.317.146-.6.375-.785zM12 13a1 1 0 0 0-1 1v5h2v-5a1 1 0 0 0-1-1"/></g></svg>
             home
           </HeaderLink>
         </li>
         <li class="ps-0">
-          <HeaderLink href="/resources/" class="hover:bg-secondary/70 hover:text-secondary-content">
-          <svg class="inline" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><!-- Icon from MingCute Icon by MingCute Design - https://github.com/Richard9394/MingCute/blob/main/LICENSE --><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M5.636 10.586a3.5 3.5 0 1 1 4.95-4.95l7.778 7.778a3.5 3.5 0 0 1-4.95 4.95l-4.066-4.066a1.25 1.25 0 1 1 1.768-1.768l3.712 3.713a1 1 0 0 0 1.415-1.415l-3.713-3.712a3.25 3.25 0 0 0-4.596 4.596L12 19.778A5.5 5.5 0 1 0 19.778 12L12 4.222A5.5 5.5 0 1 0 4.222 12l.353.353A1 1 0 1 0 5.99 10.94z"/></g></svg>
+          <HeaderLink href="/about" class="hover:bg-secondary/70 hover:text-secondary-content">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><!-- Icon from MingCute Icon by MingCute Design - https://github.com/Richard9394/MingCute/blob/main/LICENSE --><g fill="none" fill-rule="evenodd"><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M18.5 2a3.5 3.5 0 0 1 1.796 6.505A9 9 0 1 1 3 12c0-1.24.25-2.42.704-3.495a3.5 3.5 0 1 1 4.8-4.8A9 9 0 0 1 12 2.999c1.24 0 2.42.25 3.495.704A3.5 3.5 0 0 1 18.5 2M12 12a1.5 1.5 0 0 0-1.012 2.608a.5.5 0 0 1-.488.392a1 1 0 1 0 0 2a2.5 2.5 0 0 0 1.5-.5c.418.314.937.5 1.5.5a1 1 0 1 0 0-2a.5.5 0 0 1-.488-.392A1.5 1.5 0 0 0 12 12M9 8a1 1 0 0 0-1 1v1a1 1 0 1 0 2 0V9a1 1 0 0 0-1-1m6 0a1 1 0 0 0-.993.883L14 9v1a1 1 0 0 0 1.993.117L16 10V9a1 1 0 0 0-1-1"/></g></svg>
+            about
+          </HeaderLink>
+        </li>
+        <li class="ps-0">
+          <HeaderLink href="/resources" class="hover:bg-accent/70 hover:text-accent-content">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><!-- Icon from MingCute Icon by MingCute Design - https://github.com/Richard9394/MingCute/blob/main/LICENSE --><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M5.636 10.586a3.5 3.5 0 1 1 4.95-4.95l7.778 7.778a3.5 3.5 0 0 1-4.95 4.95l-4.066-4.066a1.25 1.25 0 1 1 1.768-1.768l3.712 3.713a1 1 0 0 0 1.415-1.415l-3.713-3.712a3.25 3.25 0 0 0-4.596 4.596L12 19.778A5.5 5.5 0 1 0 19.778 12L12 4.222A5.5 5.5 0 1 0 4.222 12l.353.353A1 1 0 1 0 5.99 10.94z"/></g></svg>
             resources
           </HeaderLink>
         </li>
 	  		<li class="ps-0">
-          <HeaderLink href="/recipes/" class="hover:bg-accent/70 hover:text-accent-content">
-          <svg class="inline" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><!-- Icon from MingCute Icon by MingCute Design - https://github.com/Richard9394/MingCute/blob/main/LICENSE --><g fill="none"><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M3.707 8.293L4.414 9a2 2 0 0 1 .543 1H13.5a1 1 0 1 1 0 2H5v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5h-.5a1 1 0 1 1 0-2h.543a2 2 0 0 1 .543-1l.707-.707a1 1 0 1 1 1.414 1.414l-.707.707V17a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-6.586l-.707-.707a1 1 0 0 1 1.414-1.414m15.74-4.187a1 1 0 0 1 .447 1.341l-5 10a1 1 0 0 1-.05.09A3.502 3.502 0 0 1 8 14.5V14a1 1 0 0 1 1-1h4.882l4.224-8.447a1 1 0 0 1 1.341-.447M12.915 15h-2.83a1.5 1.5 0 0 0 2.83 0m.64-12.832a1 1 0 0 1 .277 1.387l-.216.323a.725.725 0 0 0 .091.915a2.725 2.725 0 0 1 .34 3.439l-.215.323a1 1 0 0 1-1.664-1.11l.216-.323a.725.725 0 0 0-.091-.915a2.725 2.725 0 0 1-.34-3.438l.215-.324a1 1 0 0 1 1.387-.277m-5.387.277A1 1 0 0 1 9.89 3.454l-.059.1l-.215.324a.725.725 0 0 0 .09.915a2.725 2.725 0 0 1 .442 3.274l-.101.165l-.216.323A1 1 0 0 1 8.11 7.546l.059-.1l.215-.324a.725.725 0 0 0-.09-.915a2.725 2.725 0 0 1-.442-3.274l.101-.164z"/></g></svg>
+          <HeaderLink href="/recipes" class="hover:bg-warning/70 hover:text-warning-content">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><!-- Icon from MingCute Icon by MingCute Design - https://github.com/Richard9394/MingCute/blob/main/LICENSE --><g fill="none"><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M3.707 8.293L4.414 9a2 2 0 0 1 .543 1H13.5a1 1 0 1 1 0 2H5v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5h-.5a1 1 0 1 1 0-2h.543a2 2 0 0 1 .543-1l.707-.707a1 1 0 1 1 1.414 1.414l-.707.707V17a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-6.586l-.707-.707a1 1 0 0 1 1.414-1.414m15.74-4.187a1 1 0 0 1 .447 1.341l-5 10a1 1 0 0 1-.05.09A3.502 3.502 0 0 1 8 14.5V14a1 1 0 0 1 1-1h4.882l4.224-8.447a1 1 0 0 1 1.341-.447M12.915 15h-2.83a1.5 1.5 0 0 0 2.83 0m.64-12.832a1 1 0 0 1 .277 1.387l-.216.323a.725.725 0 0 0 .091.915a2.725 2.725 0 0 1 .34 3.439l-.215.323a1 1 0 0 1-1.664-1.11l.216-.323a.725.725 0 0 0-.091-.915a2.725 2.725 0 0 1-.34-3.438l.215-.324a1 1 0 0 1 1.387-.277m-5.387.277A1 1 0 0 1 9.89 3.454l-.059.1l-.215.324a.725.725 0 0 0 .09.915a2.725 2.725 0 0 1 .442 3.274l-.101.165l-.216.323A1 1 0 0 1 8.11 7.546l.059-.1l.215-.324a.725.725 0 0 0-.09-.915a2.725 2.725 0 0 1-.442-3.274l.101-.164z"/></g></svg>
             recipes
           </HeaderLink>
         </li>
         <li class="ps-0">
-          <HeaderLink href="/catppuccin/" class="hover:bg-info/70 hover:text-info-content">
-          <svg class="inline" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><!-- Icon from MingCute Icon by MingCute Design - https://github.com/Richard9394/MingCute/blob/main/LICENSE --><g fill="none" fill-rule="evenodd"><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M18.296 3.045a1 1 0 0 1 .687.77l1.341 7.155c.13.687.171 1.367.136 2.03H21a1 1 0 1 1 0 2h-.894a8.6 8.6 0 0 1-.551 1.363l1.07.856a1 1 0 1 1-1.25 1.562l-.936-.749A8.43 8.43 0 0 1 12 21a8.43 8.43 0 0 1-6.44-2.968l-.935.749a1 1 0 1 1-1.25-1.562l1.07-.856A8.4 8.4 0 0 1 3.895 15H3a1 1 0 1 1 0-2h.54a8.5 8.5 0 0 1 .136-2.03l1.341-7.154a1 1 0 0 1 1.69-.523l2.414 2.414A1 1 0 0 0 9.828 6h4.344a1 1 0 0 0 .707-.293l2.414-2.414a1 1 0 0 1 1.003-.248m-5.743 11.56l-.553.277l-.553-.276a1 1 0 1 0-.894 1.788l.553.277a2 2 0 0 0 1.788 0l.553-.277a1 1 0 1 0-.894-1.788ZM9.5 10a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3m5 0a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3"/></g></svg>
+          <HeaderLink href="/catppuccin" class="hover:bg-info/70 hover:text-info-content">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><!-- Icon from MingCute Icon by MingCute Design - https://github.com/Richard9394/MingCute/blob/main/LICENSE --><g fill="none" fill-rule="evenodd"><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M18.296 3.045a1 1 0 0 1 .687.77l1.341 7.155c.13.687.171 1.367.136 2.03H21a1 1 0 1 1 0 2h-.894a8.6 8.6 0 0 1-.551 1.363l1.07.856a1 1 0 1 1-1.25 1.562l-.936-.749A8.43 8.43 0 0 1 12 21a8.43 8.43 0 0 1-6.44-2.968l-.935.749a1 1 0 1 1-1.25-1.562l1.07-.856A8.4 8.4 0 0 1 3.895 15H3a1 1 0 1 1 0-2h.54a8.5 8.5 0 0 1 .136-2.03l1.341-7.154a1 1 0 0 1 1.69-.523l2.414 2.414A1 1 0 0 0 9.828 6h4.344a1 1 0 0 0 .707-.293l2.414-2.414a1 1 0 0 1 1.003-.248m-5.743 11.56l-.553.277l-.553-.276a1 1 0 1 0-.894 1.788l.553.277a2 2 0 0 0 1.788 0l.553-.277a1 1 0 1 0-.894-1.788ZM9.5 10a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3m5 0a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3"/></g></svg>
             catppuccin
           </HeaderLink>
         </li>
       </ul>
     </CuteCard>
   </div>
-  <div class="flex flow-row sm:flex-col gap-2 md:gap-4">
+  <div class="flex flex-row md:flex-col gap-2 md:gap-4">
     <div class="max-w-80">
       <CuteCard title="profile">
         <div class="asciicat flex flex-col mb-1">
@@ -76,6 +84,10 @@ import HeaderLink from './HeaderLink.astro';
   li {
     margin-block: 0;
     padding-block: 0;
+  }
+  li a {
+    display: flex;
+    flex-direction: row;
   }
   .asciicat {
     line-height: 1.3;
