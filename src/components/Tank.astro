@@ -1,0 +1,89 @@
+---
+import dithertank from '../assets/dither_it_tank_pretty.png';
+import { Image } from 'astro:assets';
+---
+<style>
+  
+  .tank {
+    height: 100%;
+    width: auto;
+    margin: auto;
+  }
+  .pixel-border-wrapper {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .box {
+    height: 200px;
+    width: 200px;
+    position: relative;
+    background-color: var(--color-base-100);
+        filter: 
+        drop-shadow(2px 2px color-mix(in oklab, var(--color-base-content) 50%, var(--color-base-300))) 
+        drop-shadow(1px 0 color-mix(in oklab, var(--color-base-content) 50%, var(--color-base-300)));
+  }
+  .box__line {
+    position: absolute;
+    background: var(--color-base-content);
+  }
+  .box__line--top, .box__line--bottom {
+    height: 6px;
+    width: 100%;
+  }
+  .box__line--top::before, .box__line--top::after, .box__line--bottom::before, .box__line--bottom::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--color-base-content);
+  }
+  .box__line--top {
+    top: -6px;
+  }
+  .box__line--top::before {
+    left: 0;
+    bottom: -6px;
+  }
+  .box__line--top::after {
+    right: 0;
+    bottom: -6px;
+  }
+  .box__line--bottom {
+    bottom: -6px;
+  }
+  .box__line--bottom::before {
+    left: 0;
+    top: -6px;
+  }
+  .box__line--bottom::after {
+    right: 0;
+    top: -6px;
+  }
+  .box__line--left, .box__line--right {
+    width: 6px;
+    height: 100%;
+  }
+  .box__line--left {
+    left: -6px;
+  }
+  .box__line--right {
+    right: -6px;
+  }
+</style>
+
+<div class="pixel-border-wrapper">
+  <div class="box">
+    <div class="box__line box__line--top"></div>
+    <div class="box__line box__line--right"></div>
+    <div class="box__line box__line--bottom"></div>
+    <div class="box__line box__line--left"></div>
+    <Image
+      class="tank"
+      src={dithertank}
+      alt="a medium sized dog that is sitting on a bed with front legs stretched out"
+    />
+  </div>
+</div>
+<p class="bg-base-100 w-fit p-2 px-5 rounded-box mx-auto text-center">my doggie Tank <3</p>
