@@ -29,47 +29,47 @@ import { Image } from 'astro:assets';
     background: var(--color-base-content);
   }
   .box__line--top, .box__line--bottom {
-    height: 6px;
+    height: 4px;
     width: 100%;
   }
   .box__line--top::before, .box__line--top::after, .box__line--bottom::before, .box__line--bottom::after {
     content: "";
     position: absolute;
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
     background: var(--color-base-content);
   }
   .box__line--top {
-    top: -6px;
+    top: -4px;
   }
   .box__line--top::before {
     left: 0;
-    bottom: -6px;
+    bottom: -4px;
   }
   .box__line--top::after {
     right: 0;
-    bottom: -6px;
+    bottom: -4px;
   }
   .box__line--bottom {
-    bottom: -6px;
+    bottom: -4px;
   }
   .box__line--bottom::before {
     left: 0;
-    top: -6px;
+    top: -4px;
   }
   .box__line--bottom::after {
     right: 0;
-    top: -6px;
+    top: -4px;
   }
   .box__line--left, .box__line--right {
-    width: 6px;
+    width: 4px;
     height: 100%;
   }
   .box__line--left {
-    left: -6px;
+    left: -4px;
   }
   .box__line--right {
-    right: -6px;
+    right: -4px;
   }
 </style>
 
