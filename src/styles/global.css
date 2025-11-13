@@ -45,7 +45,7 @@
 }
 body {
   font-family: 'Atkinson', sans-serif;
-  cursor: url('/foo28.cur'), auto;
+  /* cursor: url('/foo28.cur'), auto; */
   margin: 0;
   padding: 0;
   text-align: left;
