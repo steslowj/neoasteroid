@@ -1,0 +1,211 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+import CuteCard from '../components/CuteCard.astro';
+
+import badgerbag from '../assets/crafts/badgerbag.png';
+import bluedragon from '../assets/crafts/cs_blue_dragon.png';
+import desert from '../assets/crafts/cs_desert.png';
+import dragons from '../assets/crafts/cs_dragons.png';
+import greendragon from '../assets/crafts/cs_green_dragon.png';
+import petty from '../assets/crafts/cs_petty.png';
+import dragonfruit from '../assets/crafts/pottery_dragon.png';
+import bat from '../assets/crafts/pumpk_bat.png';
+import javelina from '../assets/crafts/pumpk_javelina.png';
+import robot from '../assets/crafts/pumpk_robot.png';
+
+import { Image } from 'astro:assets';
+const { title, description } = Astro.props;
+import { SITE_TITLE } from '../consts';
+import { SITE_DESCRIPTION } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title="marsh | crafts" description="marshmallowsmelter's crafts" />
+    <style>
+      main {
+        width: calc(100% - 2em);
+        max-width: 100%;
+        margin-inline: auto;
+        padding: 1em;
+        /* height: 100%; */
+      }
+      article.main-grid > * {
+        margin-bottom: 1.5em;
+      }
+      @media (max-width: 720px) {
+        main {
+          width: 100%;
+          padding: 0.5em 0;
+        }
+        article.main-grid > * {
+          margin-bottom: 1em;
+        }
+      }
+      .prose {
+        max-width: calc(100% - 2em);
+        margin-inline: auto;
+        /* height: 100%; */
+      }
+      .title {
+        padding: 1em 0 0 0;
+        text-align: center;
+        line-height: 1;
+      }
+      .title h1 {
+        margin: 0 0 0.5em 0;
+      }
+      .crafts {
+        margin: 0 0 0.5em 0;
+      }
+    </style>
+  </head>
+  <body class="max-w-10xl">
+    <Header />
+    <div class="grid md:grid-cols-[16rem_auto]">
+      <Sidebar />
+      <main>
+        <!-- <article class="prose prose-sm main-grid grid items-start gap-4 md:gap-8 grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))]"> -->
+        <article class="prose prose-sm main-grid columns-xs gap-4 md:gap-6">
+
+          <div>
+            <CuteCard title="crafts!">
+              <div class="prose prose-sm mb-1">
+                I like doing crafty things sometimes, here are some of my favorites!
+              </div>
+            </CuteCard>
+          </div>
+          
+          <div>
+            <CuteCard title="pumpk javelina">
+              <Image
+                class="crafts-1-1 crafts rounded-box"
+                src={javelina}
+                alt="a pumpkin carving of a spooky zombie javelina - they're similar to pigs"
+              />
+              <span>Oct 2025, pumpkin carving</span>
+            </CuteCard>
+          </div>
+
+          <div>
+            <CuteCard title="dragonfruit!">
+              <Image
+                class="crafts-1-1 crafts rounded-box"
+                src={dragonfruit}
+                alt="painted pottery of a pencil holder shaped like a dragon, painted hot pink and lime green on the outside and white with little black dots on the inside"
+              />
+              <span>Summer 2025, painted pottery</span>
+            </CuteCard>
+          </div>
+
+          <div>
+            <CuteCard title="petty and vindictive">
+              <Image
+                class="crafts-1-1 crafts rounded-box"
+                src={petty}
+                alt="cross stitch of fancy lettering that reads 'the high road sucks as I am petty and vindictive by nature"
+              />  
+              <span>Summer 2025, cross stitch</span>
+            </CuteCard>  
+          </div>  
+          
+          <div>
+            <CuteCard title="the 3 dragons">
+              <Image
+              class="crafts-4-3 crafts rounded-box"
+              src={dragons}
+              alt="3 framed cross stitches of dragons, one blue, one red, and one green, layed in front of my dog sleeping on a dog bed"
+              />
+              <span>Spring 2025, framing the cross stitching</span>
+            </CuteCard>
+          </div>
+
+          <div>
+            <CuteCard title="badgerbag">
+              <Image
+              class="crafts-4-3 crafts rounded-box"
+              src={badgerbag}
+              alt="a homemade duffle bag with a badger pattern on a couch next to a dog covered in blankets"
+              />
+              <span>Winter 2024, sewing</span>
+            </CuteCard>  
+          </div>
+
+          <div>
+            <CuteCard title="pumpk robot">
+              <Image
+                class="crafts-1-1 crafts rounded-box"
+                src={robot}
+                alt="a pumpkin carving of a cute cartoon style robot"
+              />
+              <span>Oct 2024, pumpkin carving</span>
+            </CuteCard>
+          </div>
+          
+          <div>
+            <CuteCard title="pumpk bat">
+              <Image
+                class="crafts-1-1 crafts rounded-box"
+                src={bat}
+                alt="a pumpkin carving of a cute cartoon style bat"
+              />
+              <span>Oct 2024, pumpkin carving</span>
+            </CuteCard>
+          </div>
+
+          <div>
+            <CuteCard title="green dragon">
+              <Image
+              class="crafts-1-1 crafts rounded-box"
+              src={greendragon}
+              alt="cross stitch of a dragon flying over forested mountains"
+              />
+              <span>Fall 2024, cross stitch</span>
+            </CuteCard>
+          </div>
+
+          <div>
+            <CuteCard title="blue dragon">
+              <Image
+              class="crafts-1-1 crafts rounded-box"
+              src={bluedragon}
+              alt="cross stitch of a dragon poking its head out of the ocean with a sunset behind it"
+              />
+              <span>2024, cross stitch</span>
+            </CuteCard>
+          </div>
+          
+          <div>
+            <CuteCard title="rainbow desert">
+              <Image
+              class="crafts-1-1 crafts rounded-box"
+              src={desert}
+              alt="cross stitch of a desert scene with saguaro cactus and mountains with a rainbow color palette"
+              />
+              <span>Fall 2024, cross stitch</span>
+            </CuteCard>
+          </div>
+          
+        </article>
+      </main>
+    </div>
+    <Footer />
+  </body>
+  <script>
+    const cardList = document.querySelectorAll('.main-grid .cute-card');
+    cardList.forEach((card) => {
+      card.style.backgroundColor =
+        'color-mix(in oklab, var(--color-primary) 50%, transparent)';
+    });
+    const cardToolbarList = document.querySelectorAll(
+      '.main-grid .cute-card .mockup-browser-toolbar'
+    );
+    cardToolbarList.forEach((card) => {
+      card.style.color = 'var(--color-primary-content)';
+    });
+  </script>
+</html>
